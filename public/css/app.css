@@ -1,0 +1,16 @@
+.oscillo_logo {
+  font-family: 'Josefin Sans', sans-serif; }
+
+.title {
+  font-weight: 400;
+  font-size: 96px; }
+
+.callout {
+  padding: 0 0 0 3px; }
+
+.callout.alert {
+  background-color: #FF7878;
+  color: #FFFFFF;
+  margin-top: -17px; }
+
+/*# sourceMappingURL=app.css.map */

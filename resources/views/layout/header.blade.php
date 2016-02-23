@@ -6,20 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>oscillo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css">
-
     <link rel="stylesheet" crossorigin="anonymous" integrity="sha256-RYMme8QITYCPWDLzOXswkTsPu1tjeAE2Myb7Kid/JBY="
           href="https://cdn.jsdelivr.net/foundation-icons/3.0/foundation-icons.min.css">
-
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:700' rel='stylesheet' type='text/css'>
-    <style>
-        .oscillo_logo {
-            font-family: 'Josefin Sans', sans-serif;
-        }
 
-        .title {
-            font-weight: 400;
-            font-size: 96px;
-        }
+    <link rel="stylesheet" href="/css/app.css">
+    <style>
+
     </style>
 </head>
 <body>

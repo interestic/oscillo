@@ -1,9 +1,9 @@
 @extends('layout.default')
 
 @section('content')
-<div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="medium-6 medium-centered large-4 large-centered columns">
+
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -48,13 +48,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i>Login
-                                </button>
+                        <button class="small button" name="Send" type="submit">SEND IN YOUR RESERVATION</button><br>
+                        <button class="small button [success secondary alert]" name="reset" type="reset">CLEAR FORM</button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                        <br>
+                        <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
                         </div>
                     </form>
@@ -62,5 +60,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
