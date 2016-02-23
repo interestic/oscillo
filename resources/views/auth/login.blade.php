@@ -17,9 +17,9 @@
                                 <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                    <div class="alert callout">
+                                        <p class="alert">{{ $errors->first('email') }}.</p>
+                                    </div>
                                 @endif
                             </div>
                         </div>
@@ -31,9 +31,9 @@
                                 <input type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                    <div class="alert callout">
+                                        <p class="alert">{{ $errors->first('password') }}.</p>
+                                    </div>
                                 @endif
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
 
-                        <button class="small button" name="Send" type="submit">SEND IN YOUR RESERVATION</button><br>
+                        <button class="small button" name="Send" type="submit">LOGIN</button><br>
                         <button class="small button [success secondary alert]" name="reset" type="reset">CLEAR FORM</button>
 
                         <br>

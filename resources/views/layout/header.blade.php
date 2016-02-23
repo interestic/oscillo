@@ -19,9 +19,11 @@
 
 <div class="top-bar">
     <div class="top-bar-left">
+        <a href="/">
         <ul class="menu">
             <li class="menu-text oscillo_logo">oscillo</li>
         </ul>
+         </a>
     </div>
     <div class="top-bar-right">
         <ul class="menu">

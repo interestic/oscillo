@@ -1,10 +1,8 @@
 @extends('layout.default')
 
 @section('content')
-
     <div class="row">
         <div class="medium-6 medium-centered large-4 large-centered columns">
-
             <div class="panel-heading">Register</div>
             <div class="panel-body">
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
