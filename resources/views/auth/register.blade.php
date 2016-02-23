@@ -3,13 +3,16 @@
 @section('content')
     <div class="row">
         <div class="medium-6 medium-centered large-4 large-centered columns">
-            <div class="panel-heading">Register</div>
+            <H1 class="panel-heading">
+                Register
+            </H1>
+
             <div class="panel-body">
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                     {!! csrf_field() !!}
 
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        <label class="col-md-4 control-label">Name</label>
+                        <label class="col-md-4 control-label">Username</label>
 
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -22,7 +25,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label class="col-md-4 control-label">E-Mail Address</label>
+                        <label class="col-md-4 control-label">Email Address</label>
 
                         <div class="col-md-6">
                             <input type="email" class="form-control" name="email" value="{{ old('email') }}">

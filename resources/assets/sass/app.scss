@@ -1,19 +1,23 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 .oscillo_logo {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: Josefin Sans,
+  sans-serif
 }
 
 .title {
   font-weight: 400;
-  font-size: 96px;
+  font-size: 96px
 }
 
 .callout {
-  padding:0 0 0 3px;
+  padding: 0 0 0 3px
 }
 
 .callout.alert {
-  background-color: #FF7878;
-  color: #FFFFFF;
-  margin-top: -17px;
+  background-color: #ff7878;
+  color: #fff;
+  margin-top: -17px
+}
+
+.header_icon {
+  font-size: 23px;
 }

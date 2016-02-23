@@ -20,10 +20,10 @@
 <div class="top-bar">
     <div class="top-bar-left">
         <a href="/">
-        <ul class="menu">
-            <li class="menu-text oscillo_logo">oscillo</li>
-        </ul>
-         </a>
+            <ul class="menu">
+                <li class="menu-text oscillo_logo">oscillo</li>
+            </ul>
+        </a>
     </div>
     <div class="top-bar-right">
         <ul class="menu">
@@ -32,17 +32,14 @@
                 <a href="{{ url('/register') }}" class="button success">Sign up</a>
                 <a href="{{ url('/login') }}" class="button">Login</a>
             @else
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
+                <span data-toggle="account-dropdown">{{ Auth::user()->name }} <i class="fi-torso header_icon"></i></span>
+                <div class="dropdown-pane bottom" id="account-dropdown" data-dropdown data-auto-focus="false">
+                    <a href="{{ url('/home/setings') }}"><i class="fi-widget"></i> <small>settings</small></a>
+                    <hr>
+                    <a href="{{ url('/logout') }}"><i class="fi-power"></i> <small>Logout</small></a>
+                </div>
 
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                    </ul>
-                </li>
             @endif
-
         </ul>
     </div>
 </div>
