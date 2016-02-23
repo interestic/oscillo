@@ -28,7 +28,7 @@
     </div>
     <div class="top-bar-right">
         <ul class="menu">
-            <a href="/regist" class="button success">Sign up</a>
+            <a href="/register" class="button success">Sign up</a>
             <a href="/login" class="button">Login</a>
         </ul>
     </div>

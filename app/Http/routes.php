@@ -26,8 +26,14 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    Route::controller('login','LoginController');
-    Route::controller('regist','RegistController');
+//Route::group(['middleware' => ['web']], function () {
+//    Route::controller('login','LoginController');
+//    Route::controller('regist','RegistController');
+//
+//});
 
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });

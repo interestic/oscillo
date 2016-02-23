@@ -12,20 +12,8 @@
                     <a href="{{$facebook_link}}"><i class="fi-social-facebook"></i> facebookで登録</a><br>
                     <a href="{{$github_link}}"><i class="fi-social-github"></i> githubで登録</a><br>
                     <a href="{{$twitter_link}}"><i class="fi-social-twitter"></i> twitterで登録</a><br>
+                    <a href="/regist/signup"><i class="fi-mail"></i> メールアドレスで登録</a><br>
 
-                    <label>Email
-                        <input name="email" type="text" placeholder="somebody@example.com">
-                    </label>
-                    <label>Password
-                        <input name="password" type="text" placeholder="Password">
-                    </label>
-                    <input id="show-password" type="checkbox"><label for="show-password">Show password</label>
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}"><br>
-                    <button class="small button" name="Send" type="submit">SEND IN YOUR RESERVATION</button><br>
-                    <button class="small button [success secondary alert]" name="reset" type="reset">CLEAR FORM</button>
-
-
-                    <p class="text-center"><a target="_blank" href="/login/reminder">パスワードを忘れた方はこちら</a></p>
                 </div>
             </form>
 
