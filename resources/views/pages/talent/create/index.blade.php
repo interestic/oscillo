@@ -48,12 +48,11 @@
                 </label>
 
                 {{Form::token()}}
-                <button class="button" type="submit">確認</button>
+                <button class="button expanded" type="submit">確認</button>
                 {{ Form::close() }}
             </div>
         </div>
     </div>
-    <a href="/login/reminder/confirm">確認画面へ</a>
 
     <div class="reveal" id="twitterModal" data-reveal>
         <img class="float-center" src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">

@@ -17,5 +17,4 @@
     {{Form::close()}}
 
 </div>
-    <a href="/login/reminder/done">完了画面へ</a>
 @endsection

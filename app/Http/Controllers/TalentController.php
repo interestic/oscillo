@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -61,15 +63,26 @@ class TalentController extends Controller
                 break;
             default:
                 echo 'post index';
+
+                $pageOgj = new Page();
+                $input = Input::all();
+                if ($pageOgj->validate($input)) {
+                    $pageOgj->save();
+                    $last_todo = $pageOgj->id;
+                    $pages = Todo::whereId($last_todo)->get();
+                } else {
+                    $err = $pageOgj->errors();
+                }
+
                 $template = $view_prefix . 'index';
                 $redirect = '/talent/create/confirm';
                 break;
 
         }
 
-        if(!isset($err)){
+        if (!isset($err)) {
             return redirect($redirect);
-        }else{
+        } else {
             return view($template);
         }
 
