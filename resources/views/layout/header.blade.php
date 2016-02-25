@@ -33,13 +33,14 @@
                 <a href="{{ url('/login') }}" class="button">Login</a>
             @else
                 <span data-toggle="account-dropdown">{{ Auth::user()->name }} <i class="fi-torso header_icon"></i></span>
-                <div class="dropdown-pane bottom" id="account-dropdown" data-dropdown data-auto-focus="false">
-                    <a href="{{ url('/home/setings') }}"><i class="fi-widget"></i> <small>settings</small></a>
-                    <hr>
-                    <a href="{{ url('/logout') }}"><i class="fi-power"></i> <small>Logout</small></a>
-                </div>
-
             @endif
         </ul>
     </div>
+</div>
+
+<div class="dropdown-pane bottom" id="account-dropdown" data-dropdown data-auto-focus="false">
+    <a href="{{ url('/home') }}"><i class="fi-graph-trend"></i> <small>Dashboard</small></a><br>
+    <a href="{{ url('/settings') }}"><i class="fi-widget"></i> <small>settings</small></a>
+    <hr>
+    <a href="{{ url('/logout') }}"><i class="fi-power"></i> <small>Logout</small></a>
 </div>
