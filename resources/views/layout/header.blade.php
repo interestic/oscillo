@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<div class="dropdown-pane bottom" id="account-dropdown" data-dropdown data-auto-focus="false">
+<div class="dropdown-pane bottom small" id="account-dropdown" data-dropdown data-auto-focus="false">
     <a href="{{ url('/home') }}"><i class="fi-graph-trend"></i> <small>Dashboard</small></a><br>
     <a href="{{ url('/settings') }}"><i class="fi-widget"></i> <small>settings</small></a>
     <hr>

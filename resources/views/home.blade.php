@@ -7,7 +7,11 @@
 
             <div class="row column log-in-form">
                 <h4 class="text-center">設定画面</h4>
-                ここはダッシュボードです。
+
+                <p>まだ、お気に入りが登録されていません。</p>
+                <p>まずはお気に入りを追加しましょう。</p>
+                <a href="/talent/search">探す</a>
+
             </div>
 
         </div>

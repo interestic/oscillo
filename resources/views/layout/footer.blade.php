@@ -1,10 +1,18 @@
 <script src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/what-input/1.2.1/what-input.min.js"></script>
-<script src="https://cdn.jsdelivr.net/g/foundation@6.1.2(foundation.min.js+js/foundation.dropdown.js+js/foundation.tooltip.js)"></script>
+<script src="https://cdn.jsdelivr.net/g/foundation@6.1.2"></script>
 <script>
     $(document).foundation();
     // Include the UserVoice JavaScript SDK (only needed once on a page)
-    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/rbAzChvQJl8kWF4ybxoFNw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+    UserVoice = window.UserVoice || [];
+    (function () {
+        var uv = document.createElement('script');
+        uv.type = 'text/javascript';
+        uv.async = true;
+        uv.src = '//widget.uservoice.com/rbAzChvQJl8kWF4ybxoFNw.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(uv, s)
+    })();
 
     //
     // UserVoice Javascript SDK developer documentation:
@@ -37,7 +45,7 @@
     }]);
 
     // Add default trigger to the bottom-right corner of the window:
-    UserVoice.push(['addTrigger', {mode: 'contact', trigger_position: 'bottom-right' }]);
+    UserVoice.push(['addTrigger', {mode: 'contact', trigger_position: 'bottom-right'}]);
 
     // Or, use your own custom trigger:
     //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
@@ -45,6 +53,8 @@
     // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
     UserVoice.push(['autoprompt', {}]);
 </script>
+
+@yield('js')
 
 </body>
 </html>
