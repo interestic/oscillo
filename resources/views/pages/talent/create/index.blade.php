@@ -55,46 +55,54 @@
     </div>
 
     <div class="reveal" id="twitterModal" data-reveal>
-        <img class="float-center" src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
+        <img class="float-center"
+             src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
     </div>
 
     <div class="reveal" id="facebookModal" data-reveal>
-        <img class="float-center" src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
+        <img class="float-center"
+             src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
     </div>
 
     <div class="reveal" id="instagramModal" data-reveal>
-        <img class="float-center" src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
+        <img class="float-center"
+             src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
     </div>
 
     <div class="reveal" id="blogModal" data-reveal>
-        <img class="float-center" src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
+        <img class="float-center"
+             src="http://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif?resize=48%2C48">
     </div>
 @endsection
 
 @section('js')
     <script>
-        $(function(){
-           $('.input-group-button').on('click',function(){
-               var target_modal = $(this).attr('data-open');
-               var input_val = $(this).parent().children(':input').val();
-               var html ='';
-               if(input_val.length>0){
+        $(function () {
+            $('.input-group-button').on('click', function () {
+                var target_modal = $(this).attr('data-open');
+                var input_val = $(this).parent().children(':input').val();
+                var html = '';
+                if (input_val.length > 0) {
 
-//                   $.get("https://api.twitter.com/1.1/users/show.json",
-//                           { screen_name: input_val},
-//                           function(data){
-//                               //リクエストが成功した際に実行する関数
-//                               html = data;
-//                           }
-//                   );
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/twitter/profile",
+                        data: {
+                            username: input_val,
+                            _token: '{{csrf_token()}}'
+                        },
+                        success: function (result) {
+                            console.log("Data Saved: " + result);
+                        }
+                    });
 
-                   html ='Tweets by @'+input_val;
-               }else{
-                   html = '<i class="fi-alert"></i>アカウント名が入力されていません';
-               }
+                    html = 'Tweets by @' + input_val;
+                } else {
+                    html = '<i class="fi-alert"></i>アカウント名が入力されていません';
+                }
 
-               $("#"+target_modal).html(html);
-           });
+                $("#" + target_modal).html(html);
+            });
         });
     </script>
 @endsection

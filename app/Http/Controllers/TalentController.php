@@ -53,16 +53,16 @@ class TalentController extends Controller
         $view_prefix = 'pages.talent.create.';
         switch ($uri) {
             case 'confirm':
-                echo 'post confirm';
+//                echo 'post confirm';
                 $template = $view_prefix . 'confirm';
                 $redirect = '/talent/create/done';
                 break;
             case 'done':
-                echo 'post done';
+//                echo 'post done';
                 $template = $view_prefix . 'done';
                 break;
             default:
-                echo 'post index';
+//                echo 'post index';
 
                 $pageOgj = new Page();
                 $input = Input::all();
