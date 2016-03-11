@@ -162,6 +162,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
+        App\Providers\MacroServiceProvider::class
 
     ],
 

@@ -10,6 +10,18 @@
 
                 <div class="floor">
 
+                    @if (count($home_seed)>0)
+                        @foreach ($home_seed as $seed)
+                            <small>{{Form::timago($seed->updated_at)}}</small>
+                            <span class="button {{Form::numseed($seed->seed_num,'style')}} hollow fontelico-emo-{{Form::numseed($seed->seed_num,'icon')}} seed"></span>
+                            <div class="badge">{{$seed->seed_count}}</div>
+                            <br>
+                        @endforeach
+                    @else
+                        まだ何もありません
+                    @endif
+
+
                 </div>
 
                 <div class="button_menu">
@@ -21,7 +33,7 @@
                             <span class="button secondary hollow fontelico-emo-unhappy seed" value="2"></span>
                         </div>
                         <div class="small-2 columns">
-                            <span class="button  hollow fontelico-emo-tongue seed" value="3"></span>
+                            <span class="button hollow fontelico-emo-tongue seed" value="3"></span>
                         </div>
                         <div class="small-2 columns">
                             <span class="button hollow fontelico-emo-cry seed" value="4"></span>
@@ -89,22 +101,18 @@
                     timeout: 10000,
                     success: function (data) {
                         if (data['status'] == true) {
-                            var attr_class = $('span[value $= '+data['seed']+']').attr('class');
+                            var attr_class = $('span[value $= ' + data['seed'] + ']').attr('class');
 
-                            if($('.floor > span').first().attr('class')==attr_class){
-                                var plus = parseInt($('.floor > div').first().html())+1;
+                            if ($('.floor > span').first().attr('class') == attr_class) {
+                                var plus = parseInt($('.floor > div').first().html()) + 1;
                                 $('.floor > div').first().html(plus);
-                            }else{
-                                var seed = '<date>'+data['date']+'</date>'+
-                                        '<span class="'+attr_class+'">' + '</span>' +
-                                        '<div class="badge">'+data['count']+ '</div>' +
+                            } else {
+                                var seed = '<small>' + data['date'] + '</small> ' +
+                                        '<span class="' + attr_class + '">' + '</span> ' +
+                                        '<div class="badge">' + data['count'] + '</div>' +
                                         '<br>';
                                 $('.floor').prepend(seed).fadeIn('slow');
                             }
-
-
-
-                            console.log(data['seed'], data['count']);
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {

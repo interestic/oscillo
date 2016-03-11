@@ -9,6 +9,15 @@ class Seedlog extends Model
 {
     protected $table = "seedlogs";
 
+    public function getHomeSeed($id)
+    {
+
+        return $this->where('user_id','=',$id)
+            ->orderBy('id','desc')
+            ->paginate(10);
+
+    }
+
     public function upsertData($data)
     {
 

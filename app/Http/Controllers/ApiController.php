@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Seedlog;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -32,13 +33,13 @@ class ApiController extends Controller
 
         $seedlog = new Seedlog();
         $exec_result = $seedlog->upsertData($data);
-
+        Carbon::setLocale('ja');
         $result = [
             'http_status' => 200,
             'status' => $exec_result['status'],
             'seed' => $exec_result['seed'],
             'count' => $exec_result['count'],
-            'date' => $exec_result['date']
+            'date' => Carbon::createFromTimestamp(strtotime($exec_result['date']))->diffForHumans()
         ];
 
         return json_encode($result);

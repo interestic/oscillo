@@ -10,7 +10,8 @@
         "laravelcollective/html": "^5.2",
         "zurb/foundation": "^6.1",
         "laravel/socialite": "^2.0",
-        "thujohn/twitter": "^2.1"
+        "thujohn/twitter": "^2.1",
+        "nesbot/carbon": "^1.21"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
