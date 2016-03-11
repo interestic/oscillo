@@ -89,12 +89,21 @@
                     timeout: 10000,
                     success: function (data) {
                         if (data['status'] == true) {
-
                             var attr_class = $('span[value $= '+data['seed']+']').attr('class');
-                            var seed = '<span class="'+attr_class+'"></span><span class="badge">'+data['count']+'</span><br>';
-//                            $('.floor').hide();
-                            $('.floor').prepend(seed).fadeIn('slow');
-//                            $('.floor').slidetoggle();
+
+                            if($('.floor > span').first().attr('class')==attr_class){
+                                var plus = parseInt($('.floor > div').first().html())+1;
+                                $('.floor > div').first().html(plus);
+                            }else{
+                                var seed = '<date>'+data['date']+'</date>'+
+                                        '<span class="'+attr_class+'">' + '</span>' +
+                                        '<div class="badge">'+data['count']+ '</div>' +
+                                        '<br>';
+                                $('.floor').prepend(seed).fadeIn('slow');
+                            }
+
+
+
                             console.log(data['seed'], data['count']);
                         }
                     },

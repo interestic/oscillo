@@ -37,7 +37,8 @@ class ApiController extends Controller
             'http_status' => 200,
             'status' => $exec_result['status'],
             'seed' => $exec_result['seed'],
-            'count' => $exec_result['count']
+            'count' => $exec_result['count'],
+            'date' => $exec_result['date']
         ];
 
         return json_encode($result);
