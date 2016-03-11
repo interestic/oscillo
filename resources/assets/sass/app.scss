@@ -28,3 +28,16 @@
 .header_icon {
   font-size: 23px;
 }
+
+.button_menu{
+  position:fixed;
+  bottom:50px;
+}
+
+/*wheel nav*/
+[class|=wheelnav-divWheel] {
+  fill: #1572b6;
+  stroke: white;
+  stroke-width: 2px;
+  cursor: pointer;
+}

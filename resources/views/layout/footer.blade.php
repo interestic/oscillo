@@ -1,6 +1,9 @@
-<script src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/what-input/1.2.1/what-input.min.js"></script>
-<script src="https://cdn.jsdelivr.net/g/foundation@6.1.2"></script>
+<script src="//cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/what-input/1.2.1/what-input.min.js"></script>
+<script src="//cdn.jsdelivr.net/g/foundation@6.1.2"></script>
+<script src="//cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js"></script>
+{{--<script src="http://wheelnavjs.softwaretailoring.net/test/js/required/raphael.icons.js"></script>--}}
+{{--<script src="//cdn.jsdelivr.net/wheelnav/1.6.1/wheelnav.min.js"></script>--}}
 <script>
     $(document).foundation();
     // Include the UserVoice JavaScript SDK (only needed once on a page)
@@ -52,6 +55,17 @@
 
     // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
     UserVoice.push(['autoprompt', {}]);
+
+//    wheel = new wheelnav('wheelDiv');
+//    wheel.spreaderTitleFont = '100 24px Helvetica';
+//    wheel.colors = ['#EDC951'];
+//    wheel.cssMode = false;
+//    wheel.spreaderEnable = true;
+//    wheel.spreaderRadius = 85;
+//    wheel.slicePathFunction = slicePath().DonutSlice;
+//    wheel.clickModeRotate = false;
+//    wheel.createWheel(['text', 'icon', 'percent', 'angle', null, null, null, null, null, null, null, null, null, null, null, null]);
+
 </script>
 
 @yield('js')
