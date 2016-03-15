@@ -12,10 +12,17 @@
 
                     @if (count($home_seed)>0)
                         @foreach ($home_seed as $seed)
-                            <small>{{Form::timago($seed->updated_at)}}</small>
-                            <span class="button {{Form::numseed($seed->seed_num,'style')}} hollow fontelico-emo-{{Form::numseed($seed->seed_num,'icon')}} seed"></span>
-                            <div class="badge">{{$seed->seed_count}}</div>
-                            <br>
+                            <div class="row">
+                                <div class="small-4 columns">
+                                    <small>{{Form::timago($seed->updated_at)}}</small>
+                                </div>
+                                <div class="fi small-4 columns">
+                                    <span class="floor_icon button {{Form::numseed($seed->seed_num,'style')}} hollow fontelico-emo-{{Form::numseed($seed->seed_num,'icon')}} seed"></span>
+                                </div>
+                                <div class="ba small-4 columns">
+                                    <div class="badge">{{$seed->seed_count}}</div>
+                                </div>
+                            </div>
                         @endforeach
                     @else
                         まだ何もありません
@@ -24,45 +31,53 @@
 
                 </div>
 
-                <div class="button_menu">
-                    <div class="row">
-                        <div class="small-2 columns">
-                            <span class="button alert hollow fontelico-emo-angry seed" value="1"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button secondary hollow fontelico-emo-unhappy seed" value="2"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button hollow fontelico-emo-tongue seed" value="3"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button hollow fontelico-emo-cry seed" value="4"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button alert hollow fontelico-emo-devil seed" value="5"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button secondary hollow fontelico-emo-displeased seed" value="6"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-2 columns">
-                            <span class="button warning hollow fontelico-emo-grin seed" value="7"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button success hollow fontelico-emo-happy seed" value="8"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button warning hollow fontelico-emo-laugh seed" value="9"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button secondary hollow fontelico-emo-sleep seed" value="10"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button warning hollow fontelico-emo-squint seed" value="11"></span>
-                        </div>
-                        <div class="small-2 columns">
-                            <span class="button success hollow fontelico-emo-surprised seed" value="12"></span>
+                <div class="button_menu_bg">
+                    <div class="button_menu">
+                        <div class="menu">
+                            <div class="row">
+                                <div class="small-2 columns">
+                                    <span class="button alert hollow fontelico-emo-angry seed" value="1"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                        <span class="button secondary hollow fontelico-emo-unhappy seed"
+                                              value="2"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                    <span class="button hollow fontelico-emo-tongue seed" value="3"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                    <span class="button hollow fontelico-emo-cry seed" value="4"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                    <span class="button alert hollow fontelico-emo-devil seed" value="5"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                        <span class="button secondary hollow fontelico-emo-displeased seed"
+                                              value="6"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-2 columns">
+                                    <span class="button warning hollow fontelico-emo-grin seed" value="7"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                    <span class="button success hollow fontelico-emo-happy seed" value="8"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                    <span class="button warning hollow fontelico-emo-laugh seed" value="9"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                        <span class="button secondary hollow fontelico-emo-sleep seed"
+                                              value="10"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                    <span class="button warning hollow fontelico-emo-squint seed" value="11"></span>
+                                </div>
+                                <div class="small-2 columns">
+                                        <span class="button success hollow fontelico-emo-surprised seed"
+                                              value="12"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,14 +118,24 @@
                         if (data['status'] == true) {
                             var attr_class = $('span[value $= ' + data['seed'] + ']').attr('class');
 
-                            if ($('.floor > span').first().attr('class') == attr_class) {
-                                var plus = parseInt($('.floor > div').first().html()) + 1;
-                                $('.floor > div').first().html(plus);
+                            console.log($('.floor > .row > .fi > span').first().attr('class') == 'floor_icon ' + attr_class);
+
+                            if ($('.floor > .row > .fi > span').first().attr('class') == 'floor_icon ' + attr_class) {
+                                var plus = parseInt($('.floor > .row > .ba > .badge').first().html()) + 1;
+                                console.log($('.floor > .row > .ba > .badge').first().html());
+                                $('.floor > .row > .ba > .badge').first().html(plus);
                             } else {
-                                var seed = '<small>' + data['date'] + '</small> ' +
-                                        '<span class="' + attr_class + '">' + '</span> ' +
+                                var seed = '<div class="row">' +
+                                        '<div class="small-4 columns">' +
+                                        '<small>' + data['date'] + '</small> ' +
+                                        '</div>' +
+                                        '<div class="fi small-4 columns">' +
+                                        '<span class="floor_icon ' + attr_class + '">' + '</span> ' +
+                                        '</div>' +
+                                        '<div class="ba small-4 columns">' +
                                         '<div class="badge">' + data['count'] + '</div>' +
-                                        '<br>';
+                                        '</div>' +
+                                        '</div>';
                                 $('.floor').prepend(seed).fadeIn('slow');
                             }
                         }
