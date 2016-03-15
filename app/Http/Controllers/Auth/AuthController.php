@@ -15,8 +15,8 @@ class AuthController extends Controller
     | Registration & Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
+    | This controllers handles the registration of new users, as well as the
+    | authentication of existing users. By default, this controllers uses
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
@@ -31,7 +31,7 @@ class AuthController extends Controller
     protected $redirectTo = '/home';
 
     /**
-     * Create a new authentication controller instance.
+     * Create a new authentication controllers instance.
      *
      * @return void
      */

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class SettingController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Create a new controllers instance.
      *
      * @return void
      */

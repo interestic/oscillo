@@ -12,9 +12,15 @@ elixir.config.sourcemaps = false;
  |
  */
 
-elixir(function(mix) {
-    mix.sass(
-        ['app.scss','_settings.scss'],
-        'public/css/app.css'
-    );
+elixir(function (mix) {
+  mix.sass([
+      'app.scss',
+      '_settings.scss'
+    ], 'public/css/app.css')
+    .scripts([
+      'uservoice.js',
+      'app.js',
+      'controllers/homeController.js'
+    ], 'public/js/app.js')
+    .phpUnit();
 });

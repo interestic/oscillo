@@ -7,7 +7,7 @@
 |
 | Here is where you will register all of the routes in an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
+| and give it the controllers to call when that URI is requested.
 |
 */
 
@@ -27,8 +27,8 @@ Route::get('/', function () {
 */
 
 //Route::group(['middleware' => ['web']], function () {
-//    Route::controller('login','LoginController');
-//    Route::controller('regist','RegistController');
+//    Route::controllers('login','LoginController');
+//    Route::controllers('regist','RegistController');
 //
 //});
 

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
 use Thujohn\Twitter\Twitter;
@@ -27,7 +28,7 @@ class ApiController extends Controller
 
     }
 
-    public function post_seedlog()
+    public function post_seedUpdate()
     {
         $data = Input::only('user_id', 'seed');
 
@@ -43,5 +44,13 @@ class ApiController extends Controller
         ];
 
         return json_encode($result);
+    }
+
+    public function get_seedHomeById($id)
+    {
+        $seedlog = new Seedlog();
+        $result = $seedlog->getHomeSeed($id);
+
+        return response()->json($result,200)->setCallback(Input::get('callback'));
     }
 }
