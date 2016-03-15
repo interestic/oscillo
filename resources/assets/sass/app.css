@@ -21,4 +21,41 @@
 .header_icon {
   font-size: 23px; }
 
+.button.hollow_ext,
+.button.hollow_ext:focus,
+.button.hollow_ext:hover {
+  background-color: white; }
+
+.button_menu {
+  background-color: rgba(255, 255, 255, 0.55);
+  position: fixed;
+  bottom: 50px;
+  padding: 20px 0 0;
+  margin: 0 10px 0; }
+
+/*wheel nav*/
+[class|=wheelnav-divWheel] {
+  fill: #1572b6;
+  stroke: white;
+  stroke-width: 2px;
+  cursor: pointer; }
+
+.floor_icon {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color .25s ease-out, color .25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 25px !important;
+  margin: 5px !important;
+  font-size: 6rem;
+  background-color: #2199e8;
+  color: #fff; }
+
 /*# sourceMappingURL=app.css.map */

@@ -2,7 +2,7 @@
  * Created by yokoshima on 2016/03/15.
  */
 oscilloApp.controller('HomeController', function($scope,Seed) {
-  $scope.seed = new Seed();
+  $scope.seed = new Seed($scope);
 });
 
 oscilloApp.factory('Seed', function($http) {
@@ -16,7 +16,7 @@ oscilloApp.factory('Seed', function($http) {
     if (this.busy) return;
     this.busy = true;
 
-    var url = "/api/seed-home-by-id/"+$scope.user_id+"/";
+    var url = "/api/seed-home-by-id/2/?callback=nextPage";
     $http.jsonp(url).success(function(data) {
       var items = data.data.children;
       for (var i = 0; i < items.length; i++) {
