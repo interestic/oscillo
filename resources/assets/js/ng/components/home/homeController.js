@@ -47,7 +47,7 @@ oscilloApp.controller('HomeController', function ($scope, $rootScope, $http, See
             '<small>' + data['date'] + '</small> ' +
             '</div>' +
             '<div class="fi small-4 columns">' +
-            '<span class="' + attr_class + '">' + '</span> ' +
+            '<span class="floor_icon ' + attr_class + '">' + '</span> ' +
             '</div>' +
             '<div class="ba small-4 columns">' +
             '<div class="badge">' + data['count'] + '</div>' +
