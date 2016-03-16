@@ -8,25 +8,46 @@
       <div class="row column">
         <h4 class="text-center">今どんな気分？</h4>
 
-        ---
+        {{--<div infinite-scroll='seed.nextPage()' infinite-scroll-disabled='seed.busy' infinite-scroll-distance='1'>--}}
+          {{--<div ng-repeat='item in seed.items'>--}}
+            {{--<span class='score'><% item.score %></span>--}}
+      {{--<span class='title'>--}}
+        {{--<a ng-href='<% item.url %>' target='_blank'><% item.title %></a>--}}
+      {{--</span>--}}
+            {{--<small>by <% item.author %> ---}}
+              {{--<a ng-href='http://reddit.com<% item.permalink %>' target='_blank'><% item.num_comments %> comments</a>--}}
+            {{--</small>--}}
+            {{--<div style='clear: both;'></div>--}}
+          {{--</div>--}}
+          {{--<div ng-show='seed.busy'>Loading data...</div>--}}
+        {{--</div>--}}
 
-        <div infinite-scroll='seed.nextPage()' infinite-scroll-disabled='seed.busy' infinite-scroll-distance='1'>
-          <div ng-repeat='item in seed.items'>
-            <span class='score'><% item.score %></span>
-      <span class='title'>
-        <a ng-href='<% item.url %>' target='_blank'><% item.title %></a>
-      </span>
-            <small>by <% item.author %> -
-              <a ng-href='http://reddit.com<% item.permalink %>' target='_blank'><% item.num_comments %> comments</a>
-            </small>
-            <div style='clear: both;'></div>
-          </div>
-          <div ng-show='seed.busy'>Loading data...</div>
-        </div>
-
-        ---
 
         <div class="floor">
+
+          <div infinite-scroll='seed.nextPage()' infinite-scroll-disabled='seed.busy' infinite-scroll-distance='1'>
+            <div ng-repeat='item in seed.items'>
+
+              <div class="row">
+                <div class="small-4 columns">
+                  <small><% item.updated_at %></small>
+{{--                  <small>{{Form::timago()}}</small>--}}
+                </div>
+                <div class="fi small-4 columns">
+          {{--<span class="floor_icon button {{Form::numseed($seed->seed_num,'style')}} hollow--}}
+          {{--fontelico-emo-{{Form::numseed($seed->seed_num,'icon')}} seed"></span>--}}
+
+                  <% item.seed_num %>
+                </div>
+                <div class="ba small-4 columns">
+                  <div class="badge"><% item.seed_count %></div>
+                </div>
+              </div>
+
+              <div style='clear: both;'></div>
+            </div>
+            <div ng-show='seed.busy'>Loading data...</div>
+          </div>
 
           {{--@if (count($home_seed)>0)--}}
             {{--@foreach ($home_seed as $seed)--}}
@@ -35,8 +56,8 @@
                   {{--<small>{{Form::timago($seed->updated_at)}}</small>--}}
                 {{--</div>--}}
                 {{--<div class="fi small-4 columns">--}}
-                  {{--<span--}}
-                      {{--class="floor_icon button {{Form::numseed($seed->seed_num,'style')}} hollow fontelico-emo-{{Form::numseed($seed->seed_num,'icon')}} seed"></span>--}}
+          {{--<span--}}
+              {{--class="floor_icon button {{Form::numseed($seed->seed_num,'style')}} hollow fontelico-emo-{{Form::numseed($seed->seed_num,'icon')}} seed"></span>--}}
                 {{--</div>--}}
                 {{--<div class="ba small-4 columns">--}}
                   {{--<div class="badge">{{$seed->seed_count}}</div>--}}

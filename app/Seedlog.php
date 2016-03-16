@@ -11,10 +11,11 @@ class Seedlog extends Model
 
     public function getHomeSeed($id)
     {
-
-        return $this->where('user_id','=',$id)
+        $result = $this->where('user_id','=',$id)
             ->orderBy('id','desc')
             ->paginate(10);
+
+        return $result;
 
     }
 
