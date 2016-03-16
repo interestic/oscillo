@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="row" ng-controller="HomeController" ng-init="user_id='{{$user_id}}'">
+  <div class="row" ng-controller="HomeController" ng-init="initId({{$user_id}})">
     <div class="medium-6 medium-centered large-4 large-centered columns">
 
       <div class="row column">
@@ -25,7 +25,7 @@
 
         <div class="floor">
 
-          <div infinite-scroll='seed.nextPage()' infinite-scroll-disabled='seed.busy' infinite-scroll-distance='1'>
+          <div infinite-scroll='seed.nextPage()' infinite-scroll-disabled='seed.busy'>
             <div ng-repeat='item in seed.items'>
 
               <div class="row">

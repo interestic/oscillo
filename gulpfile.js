@@ -19,8 +19,8 @@ elixir(function (mix) {
     ], 'public/css/app.css')
     .scripts([
       'uservoice.js',
-      'app.js',
-      'controllers/homeController.js'
+      'ng/app.js',
+      'ng/components/home/homeController.js'
     ], 'public/js/app.js')
     .phpUnit();
 });
