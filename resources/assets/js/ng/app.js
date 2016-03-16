@@ -6,4 +6,18 @@ var oscilloApp = angular.module('oscilloApp', [
 ], function ($interpolateProvider) {
   $interpolateProvider.startSymbol('<%');
   $interpolateProvider.endSymbol('%>');
-});
+}).value('icon_set', [
+  {'icon': 'wink2', 'style': 'alert'},
+  {'icon': 'angry', 'style': 'alert'},
+  {'icon': 'unhappy', 'style': 'secondary'},
+  {'icon': 'tongue', 'style': ''},
+  {'icon': 'cry', 'style': ''},
+  {'icon': 'devil', 'style': 'alert'},
+  {'icon': 'displeased', 'style': 'warning'},
+  {'icon': 'grin', 'style': 'success'},
+  {'icon': 'happy', 'style': 'warning'},
+  {'icon': 'laugh', 'style': 'secondary'},
+  {'icon': 'sleep', 'style': 'secondary'},
+  {'icon': 'squint', 'style': 'warning'},
+  {'icon': 'surprised', 'style': 'success'}
+]);
