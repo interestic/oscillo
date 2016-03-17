@@ -23,26 +23,20 @@ oscilloApp.controller('HomeController', function ($scope, $rootScope, $http, See
 
   $scope.seedUpdate = function (id) {
 
-    console.log('seedUpdate');
-
     $http({
       url: '/api/seed-update',
       method: 'POST',
       params: {user_id: $rootScope.user_id, seed: id, _token: $scope.csrf}
     }).success(function (data) {
-
-      console.log(data);
       if (data['status'] == true) {
-        var attr_class = angular.element('span[class *= fontelico-emo-' + icon_set[id].icon + ']').attr('class');
-
-        console.log(angular.element('.floor').find('span').attr('class'));
-        console.log(attr_class);
-
-        if (angular.element('.floor').find('span').attr('class') == attr_class) {
-          var plus = parseInt(angular.element('.floor').find('.badge').html()) + 1;
-          angular.element('.floor > .row > .ba > .badge').first().html(plus);
+        var attr_class = angular.element('.row > .small-2 > span[class *= fontelico-emo-' + icon_set[id].icon + ']').attr('class');
+        if (angular.element('.floor').find('span').attr('class') == 'floor_icon '+ attr_class) {
+          var first = angular.element('.badge')[0];
+          var plus = parseInt(angular.element('.floor').find(first).html()) + 1;
+          angular.element('.floor').find(first).html(plus);
         } else {
-          var seed_html = '<div class="row">' +
+          var seed_html =
+            '<div class="row">' +
             '<div class="small-4 columns">' +
             '<small>' + data['date'] + '</small> ' +
             '</div>' +

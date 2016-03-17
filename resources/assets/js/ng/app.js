@@ -13,7 +13,7 @@ var oscilloApp = angular.module('oscilloApp', [
   {'icon': 'tongue', 'style': ''},
   {'icon': 'cry', 'style': ''},
   {'icon': 'devil', 'style': 'alert'},
-  {'icon': 'displeased', 'style': 'warning'},
+  {'icon': 'displeased', 'style': 'secondary'},
   {'icon': 'grin', 'style': 'success'},
   {'icon': 'happy', 'style': 'warning'},
   {'icon': 'laugh', 'style': 'secondary'},
