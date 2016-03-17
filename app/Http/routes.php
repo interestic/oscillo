@@ -35,7 +35,7 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('home', 'HomeController@index');
+    Route::Controller('home', 'HomeController');
     Route::Controller('settings', 'SettingController');
     Route::Controller('talent', 'TalentController');
     Route::get('talent/create', 'TalentController@getCreate');

@@ -39,7 +39,8 @@
 </div>
 
 <div class="dropdown-pane bottom small" id="account-dropdown" data-dropdown data-auto-focus="false">
-    <a href="{{ url('/home') }}"><i class="fi-graph-trend"></i> <small>Dashboard</small></a><br>
+    <a href="{{ url('/home') }}"><i class="fi-home"></i> <small>Home</small></a><br>
+    <a href="{{ url('/home/dashboard') }}"><i class="fi-graph-trend"></i> <small>Dashboard</small></a><br>
     <a href="{{ url('/settings') }}"><i class="fi-widget"></i> <small>settings</small></a>
     <hr>
     <a href="{{ url('/logout') }}"><i class="fi-power"></i> <small>Logout</small></a>

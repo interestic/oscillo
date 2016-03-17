@@ -24,10 +24,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function get_index()
     {
         $data['user_id'] = Auth::user()->id;
 
-        return view('home',$data);
+        return view('pages/home/index',$data);
+    }
+
+    public function get_dashboard(){
+
+        return view('pages/home/dashboard');
     }
 }
