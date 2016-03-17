@@ -20,8 +20,11 @@ elixir(function (mix) {
     .scripts([
       'uservoice.js',
       'ng/app.js',
-      'ng/components/home/homeController.js',
+      'ng/components/home/homeIndexController.js',
       'ng/components/home/homeDirective.js'
     ], 'public/js/app.js')
+    .scripts([
+      'ng/components/home/homeDashboardController.js'
+    ], 'public/js/dashboard.js')
     .phpUnit();
 });

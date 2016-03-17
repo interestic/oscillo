@@ -40,6 +40,7 @@
     <div class="large-3 columns">&nbsp;</div>
     <div class="large-6 columns">
         <div class="oscillo_logo title">oscillo</div>
+        非言語コミュニケーション
     </div>
     <div class="large-3 columns">&nbsp;</div>
 </div>

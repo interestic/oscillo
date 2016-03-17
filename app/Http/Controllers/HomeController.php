@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+
+    static $uesr_id = 0;
+
     /**
      * Create a new controllers instance.
      *
@@ -17,6 +20,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->user_id = Auth::user()->id;;
     }
 
     /**
@@ -26,13 +30,18 @@ class HomeController extends Controller
      */
     public function get_index()
     {
-        $data['user_id'] = Auth::user()->id;
+        $data['user_id'] = $this->user_id;
 
-        return view('pages/home/index',$data);
+        return view('pages/home/index', $data);
     }
 
-    public function get_dashboard(){
+    public function get_dashboard()
+    {
 
-        return view('pages/home/dashboard');
+        $data['user_id'] = $this->user_id;
+        $seedlog = new Seedlog;
+        $data['result'] = $seedlog->getSummaryData($this->user_id);
+
+        return view('pages/home/dashboard', $data);
     }
 }

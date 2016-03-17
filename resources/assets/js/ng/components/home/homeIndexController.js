@@ -1,7 +1,7 @@
 /**
  * Created by yokoshima on 2016/03/15.
  */
-oscilloApp.controller('HomeController', function ($scope, $rootScope, $http, Seed, icon_set) {
+oscilloApp.controller('HomeIndexController', function ($scope, $rootScope, $http, Seed, icon_set) {
 
   $scope.icon_set = icon_set;
 
