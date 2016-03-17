@@ -8,7 +8,7 @@ oscilloApp.controller('HomeDashboardController', function ($scope, $rootScope, $
   $scope.init = function (id, csrf) {
     $rootScope.user_id = id;
     $scope.csrf = csrf;
-    $scope.getDashboard();
+    $scope.getDashboard(id);
   };
 
   //var rows = [["x", "Views", "GMV"]];
@@ -55,36 +55,14 @@ oscilloApp.controller('HomeDashboardController', function ($scope, $rootScope, $
   $scope.getDashboard = function (id) {
 
     console.log('getDashboard start.');
-    //$http({
-    //  url: '/api/seed-update',
-    //  method: 'POST',
-    //  params: {user_id: $rootScope.user_id, seed: id, _token: $scope.csrf}
-    //}).success(function (data) {
-    //  if (data['status'] == true) {
-    //    var attr_class = angular.element('.row > .small-2 > span[class *= fontelico-emo-' + icon_set[id].icon + ']').attr('class');
-    //    if (angular.element('.floor').find('span').attr('class') == 'floor_icon '+ attr_class) {
-    //      var first = angular.element('.badge')[0];
-    //      var plus = parseInt(angular.element('.floor').find(first).html()) + 1;
-    //      angular.element('.floor').find(first).html(plus);
-    //    } else {
-    //      var seed_html =
-    //        '<div class="row">' +
-    //        '<div class="small-4 columns">' +
-    //        '<small>' + data['date'] + '</small> ' +
-    //        '</div>' +
-    //        '<div class="fi small-4 columns">' +
-    //        '<span class="floor_icon ' + attr_class + '">' + '</span> ' +
-    //        '</div>' +
-    //        '<div class="ba small-4 columns">' +
-    //        '<div class="badge">' + data['count'] + '</div>' +
-    //        '</div>' +
-    //        '</div>';
-    //      angular.element('.floor').prepend(seed_html).fadeIn('slow');
-    //    }
-    //  }
-    //}).error(function (XMLHttpRequest, textStatus, errorThrown) {
-    //  alert("error");
-    //})
+
+    var url = '/api/dashboard-data/' + id;
+    $http.jsonp(url, {params: {page: this.page, callback: 'JSON_CALLBACK'}})
+      .success(function (data) {
+        console.log(data);
+      }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+      alert("error");
+    })
   };
 
 });

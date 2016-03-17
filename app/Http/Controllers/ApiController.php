@@ -53,4 +53,11 @@ class ApiController extends Controller
 
         return response()->json($result,200)->setCallback(Input::get('callback'));
     }
+
+    public function get_dashboardData($id){
+        $seedlog = new Seedlog();
+        $result = $seedlog->getSummaryData($id);
+
+        return response()->json($result,200)->setCallback(Input::get('callback'));
+    }
 }
