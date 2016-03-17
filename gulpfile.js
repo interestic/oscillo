@@ -20,8 +20,7 @@ elixir(function (mix) {
     .scripts([
       'uservoice.js',
       'ng/app.js',
-      'ng/components/home/homeIndexController.js',
-      'ng/components/home/homeDirective.js'
+      'ng/components/home/homeIndexController.js'
     ], 'public/js/app.js')
     .scripts([
       'ng/components/home/homeDashboardController.js'

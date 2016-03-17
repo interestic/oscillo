@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="row" ng-controller="HomeController" ng-init="init({{$user_id}}, '{{csrf_token()}}')">
+  <div class="row" ng-controller="HomeIndexController" ng-init="init({{$user_id}}, '{{csrf_token()}}')">
     <div class="medium-6 medium-centered large-4 large-centered columns">
 
       <div class="row column">
