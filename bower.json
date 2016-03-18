@@ -1,0 +1,25 @@
+{
+  "name": "oscillo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "do9iigane <dokumegane@interestic.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "foundation": "^5.5.3",
+    "angular": "^1.5.1",
+    "ngInfiniteScroll": "^1.2.2"
+  }
+}

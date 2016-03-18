@@ -58,6 +58,25 @@ class ApiController extends Controller
         $seedlog = new Seedlog();
         $result = $seedlog->getSummaryData($id);
 
-        return response()->json($result,200)->setCallback(Input::get('callback'));
+
+        foreach (($this->trim_val($result)) as $key => $item) {
+
+            $data[$key] = $item;
+        }
+
+        return response()->json($data,200)->setCallback(Input::get('callback'));
     }
+
+    public function trim_val($arr){
+
+        foreach ($arr as $key =>$item) {
+            foreach ($item as $value) {
+                $return[$key][] = $value;
+            }
+            yield $return[$key];
+        }
+    }
+
+
+
 }
