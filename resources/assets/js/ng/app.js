@@ -15,10 +15,11 @@ var oscilloApp = angular.module('oscilloApp', [
   {'icon': 'cry', 'style': ''},
   {'icon': 'devil', 'style': 'alert'},
   {'icon': 'displeased', 'style': 'secondary'},
-  {'icon': 'grin', 'style': 'success'},
-  {'icon': 'happy', 'style': 'warning'},
-  {'icon': 'laugh', 'style': 'secondary'},
+  {'icon': 'grin', 'style': 'warning'},
+  {'icon': 'happy', 'style': 'success'},
+  {'icon': 'laugh', 'style': 'warning'},
   {'icon': 'sleep', 'style': 'secondary'},
   {'icon': 'squint', 'style': 'warning'},
   {'icon': 'surprised', 'style': 'success'}
+
 ]);

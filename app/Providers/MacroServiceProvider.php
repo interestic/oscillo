@@ -23,10 +23,10 @@ class MacroServiceProvider extends ServiceProvider
             $seed[3] = ['icon' => 'tongue', 'style' => ''];
             $seed[4] = ['icon' => 'cry', 'style' => ''];
             $seed[5] = ['icon' => 'devil', 'style' => 'alert'];
-            $seed[6] = ['icon' => 'displeased', 'style' => 'warning'];
-            $seed[7] = ['icon' => 'grin', 'style' => 'success'];
-            $seed[8] = ['icon' => 'happy', 'style' => 'warning'];
-            $seed[9] = ['icon' => 'laugh', 'style' => 'secondary'];
+            $seed[6] = ['icon' => 'displeased', 'style' => 'secondary'];
+            $seed[7] = ['icon' => 'grin', 'style' => 'warning'];
+            $seed[8] = ['icon' => 'happy', 'style' => 'success'];
+            $seed[9] = ['icon' => 'laugh', 'style' => 'warning'];
             $seed[10] = ['icon' => 'sleep', 'style' => 'secondary'];
             $seed[11] = ['icon' => 'squint', 'style' => 'warning'];
             $seed[12] = ['icon' => 'surprised', 'style' => 'success'];

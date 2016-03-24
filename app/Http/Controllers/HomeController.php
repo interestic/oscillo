@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Seedlog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mockery\CountValidator\Exception;
 
 class HomeController extends Controller
 {
@@ -20,7 +21,12 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->user_id = Auth::user()->id;;
+
+        if(is_object(Auth::user())){
+            $this->user_id = Auth::user()->id;
+        }else{
+            redirect('/');
+        }
     }
 
     /**
