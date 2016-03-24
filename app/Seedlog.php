@@ -55,21 +55,21 @@ class Seedlog extends Model
     {
         $sql = <<<EOT
 SELECT
-     substring(created_at, 1, 10) AS unique_date,
-  (select sum(seed_count) from seedlogs WHERE seed_num=1 AND (substring(created_at, 1, 10))=unique_date) as num1,
-  (select sum(seed_count) from seedlogs WHERE seed_num=2 AND (substring(created_at, 1, 10))=unique_date) as num2,
-  (select sum(seed_count) from seedlogs WHERE seed_num=3 AND (substring(created_at, 1, 10))=unique_date) as num3,
-  (select sum(seed_count) from seedlogs WHERE seed_num=4 AND (substring(created_at, 1, 10))=unique_date) as num4,
-  (select sum(seed_count) from seedlogs WHERE seed_num=5 AND (substring(created_at, 1, 10))=unique_date) as num5,
-  (select sum(seed_count) from seedlogs WHERE seed_num=6 AND (substring(created_at, 1, 10))=unique_date) as num6,
-  (select sum(seed_count) from seedlogs WHERE seed_num=7 AND (substring(created_at, 1, 10))=unique_date) as num7,
-  (select sum(seed_count) from seedlogs WHERE seed_num=8 AND (substring(created_at, 1, 10))=unique_date) as num8,
-  (select sum(seed_count) from seedlogs WHERE seed_num=9 AND (substring(created_at, 1, 10))=unique_date) as num9,
-  (select sum(seed_count) from seedlogs WHERE seed_num=10 AND (substring(created_at, 1, 10))=unique_date) as num10,
-  (select sum(seed_count) from seedlogs WHERE seed_num=11 AND (substring(created_at, 1, 10))=unique_date) as num11,
-  (select sum(seed_count) from seedlogs WHERE seed_num=12 AND (substring(created_at, 1, 10))=unique_date) as num12
+  substring(created_at, 1, 10) AS x,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=1 AND (substring(created_at, 1, 10))=x) as angry,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=2 AND (substring(created_at, 1, 10))=x) as unhappy,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=3 AND (substring(created_at, 1, 10))=x) as tongue,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=4 AND (substring(created_at, 1, 10))=x) as cry,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=5 AND (substring(created_at, 1, 10))=x) as devil,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=6 AND (substring(created_at, 1, 10))=x) as displeased,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=7 AND (substring(created_at, 1, 10))=x) as grin,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=8 AND (substring(created_at, 1, 10))=x) as happy,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=9 AND (substring(created_at, 1, 10))=x) as laugh,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=10 AND (substring(created_at, 1, 10))=x) as sleep,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=11 AND (substring(created_at, 1, 10))=x) as squint,
+  (select CASE WHEN sum(seed_count)>0 THEN sum(seed_count) ELSE 0 END from seedlogs WHERE seed_num=12 AND (substring(created_at, 1, 10))=x) as surprised
    FROM seedlogs
-   GROUP BY unique_date;
+   GROUP BY x
 EOT;
 
         $result = DB::select($sql);
