@@ -17,8 +17,6 @@
 @endsection
 
 @section('js')
-  <script src="//cdn.jsdelivr.net/d3js/3.5.16/d3.min.js"></script>
-  <script src="//cdn.jsdelivr.net/c3/0.1.42/c3.min.js"></script>
   <script src="/js/dashboard.js"></script>
 
   <script>
