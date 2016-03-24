@@ -1,9 +1,11 @@
 /**
  * Created by yokoshima on 2016/03/15.
  */
-oscilloApp.controller('HomeIndexController', function ($scope, $rootScope, $http, Seed, icon_set) {
+oscilloApp.controller('HomeIndexController', function ($scope, $rootScope, $http, Seed, amMoment, icon_set) {
 
   $scope.icon_set = icon_set;
+
+  amMoment.changeLocale('ja');
 
   $scope.init = function (id, csrf) {
     $rootScope.user_id = id;

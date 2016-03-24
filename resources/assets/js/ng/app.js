@@ -3,7 +3,8 @@
  */
 var oscilloApp = angular.module('oscilloApp', [
   'infinite-scroll',
-  'gridshore.c3js.chart'
+  'gridshore.c3js.chart',
+  'angularMoment'
 ], function ($interpolateProvider) {
   $interpolateProvider.startSymbol('<%');
   $interpolateProvider.endSymbol('%>');

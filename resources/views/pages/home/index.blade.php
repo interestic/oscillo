@@ -15,7 +15,7 @@
 
               <div class="row">
                 <div class="small-4 columns">
-                  <small><% getTimeAgo(item.updated_at) %></small>
+                  <small><span am-time-ago="item.updated_at"></span></small>
                 </div>
                 <div class="fi small-4 columns">
                   <span

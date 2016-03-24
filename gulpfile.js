@@ -26,6 +26,8 @@ elixir(function (mix) {
       '../bower/d3/d3.min.js',
       '../bower/c3/c3.min.js',
       '../bower/c3-angular/c3-angular.min.js',
+      '../bower/moment/min/moment-with-locales.min.js',
+      '../bower/angular-moment/angular-moment.min.js',
       'uservoice.js',
       'ng/app.js',
       'ng/components/home/homeIndexController.js'
