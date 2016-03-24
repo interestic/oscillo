@@ -23,4 +23,6 @@ var oscilloApp = angular.module('oscilloApp', [
   {'icon': 'squint', 'style': 'warning'},
   {'icon': 'surprised', 'style': 'success'}
 
-]);
+]).run(function (amMoment) {
+  amMoment.changeLocale('ja');
+});

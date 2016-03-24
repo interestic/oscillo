@@ -14,6 +14,10 @@ use Thujohn\Twitter\Twitter;
 
 class ApiController extends Controller
 {
+    /**
+     * @param $param
+     * @return bool
+     */
     public function post_twitter($param)
     {
         switch ($param) {
@@ -28,6 +32,9 @@ class ApiController extends Controller
 
     }
 
+    /**
+     * @return string
+     */
     public function post_seedUpdate()
     {
         $data = Input::only('user_id', 'seed');
@@ -46,6 +53,10 @@ class ApiController extends Controller
         return json_encode($result);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function get_seedHomeById($id)
     {
         $seedlog = new Seedlog();
@@ -54,6 +65,10 @@ class ApiController extends Controller
         return response()->json($result,200)->setCallback(Input::get('callback'));
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function get_dashboardData($id){
         $seedlog = new Seedlog();
         $result = $seedlog->getSummaryData($id);

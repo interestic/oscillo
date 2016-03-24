@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Seedlog;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Mockery\CountValidator\Exception;
 
 class HomeController extends Controller
 {
@@ -14,9 +12,7 @@ class HomeController extends Controller
     static $uesr_id = 0;
 
     /**
-     * Create a new controllers instance.
-     *
-     * @return void
+     * HomeController constructor.
      */
     public function __construct()
     {
@@ -29,10 +25,9 @@ class HomeController extends Controller
         }
     }
 
+
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function get_index()
     {
@@ -41,6 +36,9 @@ class HomeController extends Controller
         return view('pages/home/index', $data);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function get_dashboard()
     {
 

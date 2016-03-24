@@ -9,6 +9,10 @@ class Seedlog extends Model
 {
     protected $table = "seedlogs";
 
+    /**
+     * @param $user_id
+     * @return mixed
+     */
     public function getHomeSeed($user_id)
     {
         $result = $this->where('user_id', '=', $user_id)
@@ -19,6 +23,10 @@ class Seedlog extends Model
 
     }
 
+    /**
+     * @param $data
+     * @return array
+     */
     public function upsertData($data)
     {
 
@@ -26,7 +34,7 @@ class Seedlog extends Model
 
         $this->seed_num = $data['seed'];
 
-        $date = date('Y-m-d h:i:s');
+        $date = date('Y-m-d H:i:s');
         if ($last_data['seed_num'] == $this->seed_num) {
             $last_data->seed_count = (int)$last_data['seed_count'] + 1;
             $result = $last_data->save();
@@ -51,6 +59,10 @@ class Seedlog extends Model
         }
     }
 
+    /**
+     * @param $user_id
+     * @return mixed
+     */
     public function getSummaryData($user_id)
     {
         $sql = <<<EOT

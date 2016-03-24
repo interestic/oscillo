@@ -5,8 +5,6 @@ oscilloApp.controller('HomeIndexController', function ($scope, $rootScope, $http
 
   $scope.icon_set = icon_set;
 
-  amMoment.changeLocale('ja');
-
   $scope.init = function (id, csrf) {
     $rootScope.user_id = id;
     $scope.csrf = csrf;
