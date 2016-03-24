@@ -1,11 +1,27 @@
 @extends('layout.default')
 
 @section('content')
+
   <div class="row" ng-controller="HomeDashboardController" ng-init="init({{$user_id}}, '{{csrf_token()}}')">
+
+
+    <c3chart bindto-id="chart2">
+      <chart-column column-id="data 1"
+                    column-name="Data 1"
+                    column-color="red"
+                    column-values="30,200,100,400,150,250"
+                    column-type="spline"/>
+      <chart-column column-id="data 2"
+                    column-name="Data 2"
+                    column-color="green"
+                    column-values="50,20,10,40,15,25"
+                    column-type="line"/>
+    </c3chart>
+
+    <div id="chart"></div>
+
     <div class="medium-6 medium-centered large-4 large-centered columns">
       dashboard is here.
-
-      <div id="chart"></div>
 
     </div>
   </div>

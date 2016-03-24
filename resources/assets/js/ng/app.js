@@ -2,7 +2,8 @@
  * Created by yokoshima on 2016/03/15.
  */
 var oscilloApp = angular.module('oscilloApp', [
-  'infinite-scroll'
+  'infinite-scroll',
+  'gridshore.c3js.chart'
 ], function ($interpolateProvider) {
   $interpolateProvider.startSymbol('<%');
   $interpolateProvider.endSymbol('%>');

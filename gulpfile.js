@@ -30,6 +30,7 @@ elixir(function (mix) {
     .scripts([
       '../bower/d3/d3.min.js',
       '../bower/c3/c3.min.js',
+      '../bower/c3-angular/c3-angular.min.js',
       'ng/components/home/homeDashboardController.js'
     ], 'public/js/dashboard.js')
     .phpUnit();
