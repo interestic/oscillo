@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="row" ng-controller="HomeController" ng-init="init({{$user_id}}, '{{csrf_token()}}')">
+  <div class="row" ng-controller="HomeIndexController" ng-init="init({{$user_id}}, '{{csrf_token()}}')">
     <div class="medium-6 medium-centered large-4 large-centered columns">
 
       <div class="row column">
@@ -15,7 +15,7 @@
 
               <div class="row">
                 <div class="small-4 columns">
-                  <small><% getTimeAgo(item.updated_at) %></small>
+                  <small><span am-time-ago="item.updated_at"></span></small>
                 </div>
                 <div class="fi small-4 columns">
                   <span
@@ -98,7 +98,5 @@
 @endsection
 
 @section('js')
-  <script>
-
-  </script>
+  <script src="/js/home/index.js"></script>
 @endsection

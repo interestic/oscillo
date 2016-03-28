@@ -2,7 +2,11 @@
  * Created by yokoshima on 2016/03/15.
  */
 var oscilloApp = angular.module('oscilloApp', [
-  'infinite-scroll'
+  'infinite-scroll',
+  'gridshore.c3js.chart',
+  'angularMoment',
+  'ngGeolocation',
+  'underscore'
 ], function ($interpolateProvider) {
   $interpolateProvider.startSymbol('<%');
   $interpolateProvider.endSymbol('%>');
@@ -14,10 +18,13 @@ var oscilloApp = angular.module('oscilloApp', [
   {'icon': 'cry', 'style': ''},
   {'icon': 'devil', 'style': 'alert'},
   {'icon': 'displeased', 'style': 'secondary'},
-  {'icon': 'grin', 'style': 'success'},
-  {'icon': 'happy', 'style': 'warning'},
-  {'icon': 'laugh', 'style': 'secondary'},
+  {'icon': 'grin', 'style': 'warning'},
+  {'icon': 'happy', 'style': 'success'},
+  {'icon': 'laugh', 'style': 'warning'},
   {'icon': 'sleep', 'style': 'secondary'},
   {'icon': 'squint', 'style': 'warning'},
   {'icon': 'surprised', 'style': 'success'}
-]);
+
+]).run(function (amMoment) {
+  amMoment.changeLocale('ja');
+});

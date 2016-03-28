@@ -1,7 +1,7 @@
 /**
  * Created by yokoshima on 2016/03/15.
  */
-oscilloApp.controller('HomeController', function ($scope, $rootScope, $http, Seed, icon_set) {
+oscilloApp.controller('HomeIndexController', function ($scope, $rootScope, $http, $geolocation, Seed, amMoment, icon_set) {
 
   $scope.icon_set = icon_set;
 
@@ -9,6 +9,34 @@ oscilloApp.controller('HomeController', function ($scope, $rootScope, $http, See
     $rootScope.user_id = id;
     $scope.csrf = csrf;
   };
+
+  $geolocation.getCurrentPosition({
+    timeout: 60000
+  }).then(function (position) {
+    $scope.myPosition = position;
+  });
+
+  $scope.$watch('myPosition', function (newPos, oldPos) {
+
+    if (!_.isUndefined(newPos)) {
+
+      var parameter = {};
+      parameter.latitude = newPos.coords.latitude;
+      parameter.longitude = newPos.coords.longitude;
+      parameter._token = $scope.csrf;
+
+      var post_url = '/api/latlon/';
+      $http({
+        method: 'POST',
+        url: post_url,
+        params: parameter
+      }).success(function (data, status, headers, config) {
+        console.log(data);
+      }).error(function (data, status, headers, config) {
+        //失敗
+      });
+    }
+  });
 
   $scope.getIcon = function (id) {
     return icon_set[id].icon;
@@ -22,15 +50,20 @@ oscilloApp.controller('HomeController', function ($scope, $rootScope, $http, See
   };
 
   $scope.seedUpdate = function (id) {
+    var parameter = {};
+
+    parameter.user_id = $rootScope.user_id;
+    parameter.seed = id;
+    parameter._token = $scope.csrf;
 
     $http({
       url: '/api/seed-update',
       method: 'POST',
-      params: {user_id: $rootScope.user_id, seed: id, _token: $scope.csrf}
+      params: parameter
     }).success(function (data) {
       if (data['status'] == true) {
         var attr_class = angular.element('.row > .small-2 > span[class *= fontelico-emo-' + icon_set[id].icon + ']').attr('class');
-        if (angular.element('.floor').find('span').attr('class') == 'floor_icon '+ attr_class) {
+        if (angular.element('.floor').find('span').attr('class') == 'floor_icon ' + attr_class) {
           var first = angular.element('.badge')[0];
           var plus = parseInt(angular.element('.floor').find(first).html()) + 1;
           angular.element('.floor').find(first).html(plus);

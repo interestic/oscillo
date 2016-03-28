@@ -18,10 +18,27 @@ elixir(function (mix) {
       '_settings.scss'
     ], 'public/css/app.css')
     .scripts([
+      '../bower/jquery/dist/jquery.min.js',
+      '../bower/what-input/what-input.min.js',
+      '../bower/foundation-sites/dist/foundation.min.js',
+      '../bower/angular/angular.min.js',
+      '../bower/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
+      '../bower/ngGeolocation/ngGeolocation.min.js',
+      '../bower/d3/d3.min.js',
+      '../bower/c3/c3.min.js',
+      '../bower/c3-angular/c3-angular.min.js',
+      '../bower/moment/min/moment-with-locales.min.js',
+      '../bower/angular-moment/angular-moment.min.js',
+      '../bower/underscore/underscore-min.js',
+      '../bower/angular-underscore-module/angular-underscore-module.js',
       'uservoice.js',
       'ng/app.js',
-      'ng/components/home/homeController.js',
-      'ng/components/home/homeDirective.js'
     ], 'public/js/app.js')
+    .scripts([
+      'ng/components/home/homeIndexController.js'
+    ], 'public/js/home/index.js')
+    .scripts([
+      'ng/components/home/homeDashboardController.js'
+    ], 'public/js/home/dashboard.js')
     .phpUnit();
 });
