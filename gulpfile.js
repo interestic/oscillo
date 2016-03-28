@@ -33,6 +33,8 @@ elixir(function (mix) {
       '../bower/angular-underscore-module/angular-underscore-module.js',
       'uservoice.js',
       'ng/app.js',
+      'ng/components/home/homeController.js',
+      'ng/components/home/homeDirective.js'
     ], 'public/js/app.js')
     .scripts([
       'ng/components/home/homeIndexController.js'
