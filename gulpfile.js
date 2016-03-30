@@ -25,6 +25,7 @@ elixir(function (mix) {
       '../bower/angular/angular.min.js',
       '../bower/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
       '../bower/ngGeolocation/ngGeolocation.min.js',
+      '../bower/angular-audio/app/angular.audio.js',
       '../bower/d3/d3.min.js',
       '../bower/c3/c3.min.js',
       '../bower/c3-angular/c3-angular.min.js',

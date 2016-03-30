@@ -30,6 +30,7 @@
     "angular-moment": "^0.10.3",
     "ngGeolocation": "^0.0.8",
     "angular-underscore-module": "^1.0.3",
-    "animate.css": "^3.5.1"
+    "animate.css": "^3.5.1",
+    "angular-audio": "^1.7.1"
   }
 }
