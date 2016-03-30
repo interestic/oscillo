@@ -15,7 +15,8 @@ elixir.config.sourcemaps = false;
 elixir(function (mix) {
   mix.sass([
       'app.scss',
-      '_settings.scss'
+      '_settings.scss',
+      '../bower/animate.css/animate.min.css'
     ], 'public/css/app.css')
     .scripts([
       '../bower/jquery/dist/jquery.min.js',
@@ -32,9 +33,7 @@ elixir(function (mix) {
       '../bower/underscore/underscore-min.js',
       '../bower/angular-underscore-module/angular-underscore-module.js',
       'uservoice.js',
-      'ng/app.js',
-      'ng/components/home/homeController.js',
-      'ng/components/home/homeDirective.js'
+      'ng/app.js'
     ], 'public/js/app.js')
     .scripts([
       'ng/components/home/homeIndexController.js'

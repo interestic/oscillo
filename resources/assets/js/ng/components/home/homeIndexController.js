@@ -67,6 +67,16 @@ oscilloApp.controller('HomeIndexController', function ($scope, $rootScope, $http
           var first = angular.element('.badge')[0];
           var plus = parseInt(angular.element('.floor').find(first).html()) + 1;
           angular.element('.floor').find(first).html(plus);
+
+          // Badge Animation
+          var animClass = 'badgeShake animated';
+          var animEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+          $(first)
+            .removeClass(animClass)
+            .addClass(animClass)
+            .one(animEnd, function () {
+              $(first).removeClass(animClass);
+            });
         } else {
           var seed_html =
             '<div class="row">' +
