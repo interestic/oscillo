@@ -69,3 +69,46 @@
   background-color: #2199e8;
   color: #fff;
 }
+
+$animGutter: 3px;
+@-webkit-keyframes badgeShake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translate3d(- $animGutter, 0, 0);
+    transform: translate3d(- $animGutter, 0, 0);
+  }
+
+  40%, 80% {
+    -webkit-transform: translate3d($animGutter, 0, 0);
+    transform: translate3d($animGutter, 0, 0);
+  }
+}
+
+@keyframes badgeShake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translate3d(- $animGutter, 0, 0);
+    transform: translate3d(- $animGutter, 0, 0);
+  }
+
+  40%, 80% {
+    -webkit-transform: translate3d($animGutter, 0, 0);
+    transform: translate3d($animGutter, 0, 0);
+  }
+}
+.floor .badge.animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+}
+.floor .badge.badgeShake {
+  -webkit-animation-name: badgeShake;
+  animation-name: badgeShake;
+}
