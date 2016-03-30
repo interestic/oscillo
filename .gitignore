@@ -4,7 +4,6 @@
 Homestead.yaml
 Homestead.json
 /.env
-/composer.lock
 /public/css/*
 /public/js/*
 /resources/assets/bower/*
