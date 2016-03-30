@@ -38,39 +38,40 @@
             <div class="menu">
               <div class="row">
                 <div class="small-2 columns">
-                  <span class="button alert hollow fontelico-emo-angry seed" ng-click="seedUpdate(1)"></span>
+                  <span class="button warning hollow fontelico-emo-laugh seed" ng-click="seedUpdate(1)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button secondary hollow fontelico-emo-unhappy seed" ng-click="seedUpdate(2)"></span>
+                  <span class="button warning hollow fontelico-emo-grin seed" ng-click="seedUpdate(2)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button hollow fontelico-emo-tongue seed" ng-click="seedUpdate(3)"></span>
+                  <span class="button warning hollow fontelico-emo-squint seed" ng-click="seedUpdate(3)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button hollow fontelico-emo-cry seed" ng-click="seedUpdate(4)"></span>
+                  <span class="button alert hollow fontelico-emo-angry seed" ng-click="seedUpdate(4)"></span>
                 </div>
                 <div class="small-2 columns">
                   <span class="button alert hollow fontelico-emo-devil seed" ng-click="seedUpdate(5)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button secondary hollow fontelico-emo-displeased seed" ng-click="seedUpdate(6)"></span>
+                  <span class="button alert hollow fontelico-emo-unhappy seed" ng-click="seedUpdate(6)"></span>
                 </div>
+
               </div>
               <div class="row">
                 <div class="small-2 columns">
-                  <span class="button warning hollow fontelico-emo-grin seed" ng-click="seedUpdate(7)"></span>
+                  <span class="button hollow fontelico-emo-cry seed" ng-click="seedUpdate(7)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button success hollow fontelico-emo-happy seed" ng-click="seedUpdate(8)"></span>
+                  <span class="button hollow fontelico-emo-displeased seed" ng-click="seedUpdate(8)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button warning hollow fontelico-emo-laugh seed" ng-click="seedUpdate(9)"></span>
+                  <span class="button hollow fontelico-emo-sleep seed" ng-click="seedUpdate(9)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button secondary hollow fontelico-emo-sleep seed" ng-click="seedUpdate(10)"></span>
+                  <span class="button success hollow fontelico-emo-happy seed" ng-click="seedUpdate(10)"></span>
                 </div>
                 <div class="small-2 columns">
-                  <span class="button warning hollow fontelico-emo-squint seed" ng-click="seedUpdate(11)"></span>
+                  <span class="button success hollow fontelico-emo-tongue seed" ng-click="seedUpdate(11)"></span>
                 </div>
                 <div class="small-2 columns">
                   <span class="button success hollow fontelico-emo-surprised seed" ng-click="seedUpdate(12)"></span>

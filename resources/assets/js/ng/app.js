@@ -11,18 +11,18 @@ var oscilloApp = angular.module('oscilloApp', [
   $interpolateProvider.startSymbol('<%');
   $interpolateProvider.endSymbol('%>');
 }).value('icon_set', [
-  {'icon': 'wink2', 'style': 'alert'},
-  {'icon': 'angry', 'style': 'alert'},
-  {'icon': 'unhappy', 'style': 'secondary'},
-  {'icon': 'tongue', 'style': ''},
-  {'icon': 'cry', 'style': ''},
-  {'icon': 'devil', 'style': 'alert'},
-  {'icon': 'displeased', 'style': 'secondary'},
-  {'icon': 'grin', 'style': 'warning'},
-  {'icon': 'happy', 'style': 'success'},
+  {'icon': 'wink2', 'style': 'warning'},
   {'icon': 'laugh', 'style': 'warning'},
-  {'icon': 'sleep', 'style': 'secondary'},
+  {'icon': 'grin', 'style': 'warning'},
   {'icon': 'squint', 'style': 'warning'},
+  {'icon': 'angry', 'style': 'alert'},
+  {'icon': 'devil', 'style': 'alert'},
+  {'icon': 'unhappy', 'style': 'alert'},
+  {'icon': 'cry', 'style': ''},
+  {'icon': 'displeased', 'style': ''},
+  {'icon': 'sleep', 'style': ''},
+  {'icon': 'happy', 'style': 'success'},
+  {'icon': 'tongue', 'style': 'success'},
   {'icon': 'surprised', 'style': 'success'}
 
 ]).run(function (amMoment) {
