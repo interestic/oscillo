@@ -6,7 +6,8 @@ var oscilloApp = angular.module('oscilloApp', [
   'gridshore.c3js.chart',
   'angularMoment',
   'ngGeolocation',
-  'underscore'
+  'underscore',
+  'ngAudio'
 ], function ($interpolateProvider) {
   $interpolateProvider.startSymbol('<%');
   $interpolateProvider.endSymbol('%>');
