@@ -34,6 +34,7 @@ elixir(function (mix) {
       '../bower/underscore/underscore-min.js',
       '../bower/angular-underscore-module/angular-underscore-module.js',
       'uservoice.js',
+      'detectr.min.js',
       'ng/app.js'
     ], 'public/js/app.js')
     .scripts([
