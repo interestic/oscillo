@@ -1,6 +1,6 @@
 # Oscillo
 
-[![wercker status](https://app.wercker.com/status/f6cfb3615eb03e32358668d9f0297b4c/s/master "wercker status")](https://app.wercker.com/project/bykey/f6cfb3615eb03e32358668d9f0297b4c)
+[![wercker status](https://app.wercker.com/status/4196a67afabf5b55b8b1cd1f7a72e1cc/s "wercker status")](https://app.wercker.com/project/bykey/4196a67afabf5b55b8b1cd1f7a72e1cc)
 
 非言語コミュニケーションサービス
 
