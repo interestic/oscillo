@@ -7,6 +7,7 @@
 
 ## セットアップ
 
+### ソースの準備
 **1. レポジトリをクローン**
 
 ```bash
@@ -37,10 +38,53 @@ $ bower install
 $ gulp
 ```
 
-** 6. Done！ **
+**6. Done！**  
 サーバを起動して確認する
 
+### homestealの準備
 
+**1. submodule を配置**  
+```
+$ git submodule init
+$ git submodule update
+```
+
+**2. vagrant.yamlの準備**
+```
+$ homesteal/gardening gardening:setup
+```
+
+**3. vagrant up!**
+```
+$ vagrant up 
+```
+2016/04/18
+現行のgardening box はkernel versionが古いようで、
+以下のようにmountに失敗する。
+
+```
+Failed to mount folders in Linux guest. This is usually because
+the "vboxsf" file system is not available. Please verify that
+the guest additions are properly installed in the guest and
+can work properly. The command attempted was:
+
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3` vagrant /vagrant
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` vagrant /vagrant
+
+The error output from the last command was:
+
+/sbin/mount.vboxsf: mounting failed with the error: No such device
+
+```
+
+以下で暫定対応
+
+```
+$ vagrant ssh
+$ sudo yum -y update kernel
+$ sudo yum -y install kernel-devel kernel-headers dkms gcc gcc-c++
+$ vagrant reload
+```
 
 ## 開発時に使えるコマンド
 
