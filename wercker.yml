@@ -23,3 +23,28 @@ build:
     - script:
         name: PHPUnit tests
         code: ./vendor/bin/paratest -f --colors -m 2 -p 4 tests
+
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: 27.120.106.27
+    - mktemp:
+        envvar:
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $FOO_PRIVATE
+        overwrite: true
+        hide-from-log: true
+    - script:
+        name: stop application
+        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no 27.120.106.27 stop gocities
+    - script:
+        name: transfer application
+        code: |
+          pwd
+          ls -la
+          scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no digitalocean-test wercker@Y27.120.106.27:/var//www/oscillo
+    - script:
+        name: start application
+        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no 27.120.106.27 start gocities
