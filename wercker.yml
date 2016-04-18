@@ -27,7 +27,7 @@ build:
 deploy:
   steps:
     - add-to-known_hosts:
-        hostname: 27.120.106.27
+        hostname: $HOST
     - mktemp:
         envvar:
     - create-file:
@@ -38,13 +38,13 @@ deploy:
         hide-from-log: true
     - script:
         name: stop application
-        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no 27.120.106.27 stop gocities
+        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST stop gocities
     - script:
         name: transfer application
         code: |
           pwd
           ls -la
-          scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no digitalocean-test wercker@Y27.120.106.27:/var//www/oscillo
+          scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no digitalocean-test wercker@$HOST:/var//www/oscillo
     - script:
         name: start application
-        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no 27.120.106.27 start gocities
+        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOST start gocities
