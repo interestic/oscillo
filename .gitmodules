@@ -1,0 +1,3 @@
+[submodule "homesteal"]
+    path = homesteal
+    url = git@bitbucket.org:oscillo/homesteal.git
