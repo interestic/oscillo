@@ -1,6 +1,12 @@
 {
   "private": true,
+  "scripts": {
+    "asset:install": "bower install",
+    "asset:build": "gulp sass && gulp scripts",
+    "asset": "npm run asset:install && npm run asset:build"
+  },
   "devDependencies": {
+    "bower": "^1.7.9",
     "gulp": "^3.8.8"
   },
   "dependencies": {
