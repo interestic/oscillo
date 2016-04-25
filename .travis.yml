@@ -14,6 +14,7 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_80a506355ae3_key -iv $encrypted_80a506355ae3_iv -in travis_rsa.enc -out ~\/.ssh/travis_rsa -d
   - cp .travis_rsa ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 script:
   - phpunit
