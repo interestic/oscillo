@@ -1,5 +1,7 @@
 # Oscillo
-
+dev:[![Build Status](https://travis-ci.org/interestic/oscillo.svg?branch=dev)](https://travis-ci.org/interestic/oscillo)
+stg:[![Build Status](https://travis-ci.org/interestic/oscillo.svg?branch=stg)](https://travis-ci.org/interestic/oscillo)
+prd:[![Build Status](https://travis-ci.org/interestic/oscillo.svg?branch=prd)](https://travis-ci.org/interestic/oscillo)  
 [![wercker status](https://app.wercker.com/status/4196a67afabf5b55b8b1cd1f7a72e1cc/s "wercker status")](https://app.wercker.com/project/bykey/4196a67afabf5b55b8b1cd1f7a72e1cc)
 
 非言語コミュニケーションサービス
