@@ -101,4 +101,4 @@ $ ./start_serve.sh
 ```bash
 $ gulp watch
 ```
-> その他のElixirにまつわるコマンドは[こちら](https://laravel.com/docs/5.2/elixir)を参照
+> その他のElixirにまつわるコマンドは[こちら](https://laravel.com/docs/5.2/elixir)を参照  
