@@ -1,4 +1,4 @@
-# Oscillo
+# oscillo
 dev:[![Build Status](https://travis-ci.org/interestic/oscillo.svg?branch=dev)](https://travis-ci.org/interestic/oscillo)
 stg:[![Build Status](https://travis-ci.org/interestic/oscillo.svg?branch=stg)](https://travis-ci.org/interestic/oscillo)
 prd:[![Build Status](https://travis-ci.org/interestic/oscillo.svg?branch=prd)](https://travis-ci.org/interestic/oscillo) 
