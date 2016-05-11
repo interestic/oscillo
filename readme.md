@@ -5,7 +5,6 @@ prd:[![Build Status](https://travis-ci.org/interestic/oscillo.svg?branch=prd)](h
 
 非言語コミュニケーションサービス
 
-
 ## セットアップ
 
 ### ソースの準備
