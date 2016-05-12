@@ -9,6 +9,8 @@ before_install:
 - 'php -S 127.0.0.1:9999 > /tmp/server.log 2>&1 &'
 
 before_script:
+- cp .env.travis .env
+- mysql -e 'create database oscillo_test;'
 - composer self-update
 - composer install
 - chmod -R 777 storage
