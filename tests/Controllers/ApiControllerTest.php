@@ -14,7 +14,7 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @test
+     * @ test
      */
     public function get_seedHomeById_isLogin()
     {
@@ -34,7 +34,7 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @test
+     * @ test
      */
     public function get_dashboardData_isLogin()
     {
