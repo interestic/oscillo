@@ -57,7 +57,7 @@ oscilloApp.controller('HomeIndexController', function ($scope, $rootScope, $http
     parameter._token = $scope.csrf;
 
     $http({
-      url: '/api/seed-update',
+      url: '/api/seed/update',
       method: 'POST',
       params: parameter
     }).success(function (data) {
@@ -112,7 +112,7 @@ oscilloApp.factory('Seed', function ($rootScope, $http) {
     if (this.busy) return;
     this.busy = true;
 
-    var url = "/api/seed-home-by-id/" + $rootScope.user_id + "/";
+    var url = "/api/seed/home-by-id/" + $rootScope.user_id + "/";
     $http.jsonp(url, {params: {page: this.page, callback: 'JSON_CALLBACK'}})
       .success(function (data) {
         var items = data.data;

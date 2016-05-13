@@ -64,14 +64,14 @@ class TalentController extends Controller
             default:
 //                echo 'post index';
 
-                $pageOgj = new Page();
+                $pageObj = new Page();
                 $input = Input::all();
-                if ($pageOgj->validate($input)) {
-                    $pageOgj->save();
-                    $last_todo = $pageOgj->id;
+                if ($pageObj->validate($input)) {
+                    $pageObj->save();
+                    $last_todo = $pageObj->id;
                     $pages = Todo::whereId($last_todo)->get();
                 } else {
-                    $err = $pageOgj->errors();
+                    $err = $pageObj->errors();
                 }
 
                 $template = $view_prefix . 'index';

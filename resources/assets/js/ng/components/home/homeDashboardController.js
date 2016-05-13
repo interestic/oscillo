@@ -31,7 +31,7 @@ oscilloApp.controller('HomeDashboardController', function ($scope, $rootScope, $
       $scope.monthly_datax = {"id": "x"};
     });
 
-    var url = '/api/dashboard-data/' + id;
+    var url = '/api/seed/dashboard-data/' + id;
     $http.jsonp(url, {params: {page: this.page, callback: 'JSON_CALLBACK'}})
       .success(function (data) {
         $scope.monthly_datapoints = data;

@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\OwmCityMaster;
 use App\Seedlog;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
-use Thujohn\Twitter\Twitter;
 
 class ApiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * @param $param
      * @return bool
@@ -31,49 +32,6 @@ class ApiController extends Controller
                 return false;
         }
 
-    }
-
-    /**
-     * @return string
-     */
-    public function post_seedUpdate()
-    {
-        $data = Input::only('user_id', 'seed');
-
-        $seedlog = new Seedlog();
-        $exec_result = $seedlog->upsertData($data);
-        Carbon::setLocale('ja');
-        $result = [
-            'http_status' => 200,
-            'status' => $exec_result['status'],
-            'seed' => $exec_result['seed'],
-            'count' => $exec_result['count'],
-            'date' => Carbon::createFromTimestamp(strtotime($exec_result['date']))->diffForHumans()
-        ];
-
-        return json_encode($result);
-    }
-
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function get_seedHomeById($id)
-    {
-        $seedlog = new Seedlog();
-        $result = $seedlog->getHomeSeed($id);
-
-        return response()->json($result,200)->setCallback(Input::get('callback'));
-    }
-
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function get_dashboardData($id){
-        $seedlog = new Seedlog();
-        $result = $seedlog->getSummaryData($id);
-        return response()->json($result,200)->setCallback(Input::get('callback'));
     }
 
     public function post_latlon(){
