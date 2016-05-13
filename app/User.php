@@ -12,6 +12,8 @@ class User extends Authenticatable
     private $errors;
 
     private $rules = array(
+//        'name' => 'min:3|unique_with:users',
+//        'email' => 'min:3|unique_with:users',
         'name' => 'min:3',
         'email' => 'min:3',
         'password' => 'min:3',

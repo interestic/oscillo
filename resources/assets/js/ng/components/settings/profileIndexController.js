@@ -29,14 +29,12 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
       //失敗
 
     });
-  }
+  };
 
   $scope.update_profile = function (){
     var parameter = {};
     parameter.profile = $scope.profile;
     parameter.profile.id = $rootScope.user_id;
-
-    console.log(parameter);
 
     var post_url = '/api/profile/update';
     $http({
@@ -45,7 +43,11 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
       params: parameter
     }).success(function (data, status, headers, config) {
 
-      console.log(data);
+      if(data){
+        console.log('更新出来ました');
+      }else{
+        console.log('更新に失敗しました');
+      }
 
     }).error(function (data, status, headers, config) {
       //失敗
@@ -53,5 +55,49 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
       console.log(data);
 
     });
-  }
+  };
+
+  //$scope.update_name = function (){
+  //  var parameter = {};
+  //  parameter.name = $scope.profile.name;
+  //  parameter.id = $rootScope.user_id;
+  //
+  //  var post_url = '/api/profile/update-name';
+  //  $http({
+  //    method: 'POST',
+  //    url: post_url,
+  //    params: parameter
+  //  }).success(function (data, status, headers, config) {
+  //
+  //    console.log(data);
+  //
+  //  }).error(function (data, status, headers, config) {
+  //    //失敗
+  //
+  //    console.log(data);
+  //
+  //  });
+  //}
+  //
+  //$scope.update_email = function (){
+  //  var parameter = {};
+  //  parameter.email = $scope.profile.email;
+  //  parameter.profile.id = $rootScope.user_id;
+  //
+  //  var post_url = '/api/profile/update-email';
+  //  $http({
+  //    method: 'POST',
+  //    url: post_url,
+  //    params: parameter
+  //  }).success(function (data, status, headers, config) {
+  //
+  //    console.log(data);
+  //
+  //  }).error(function (data, status, headers, config) {
+  //    //失敗
+  //
+  //    console.log(data);
+  //
+  //  });
+  //}
 });
