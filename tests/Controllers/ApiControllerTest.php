@@ -34,7 +34,8 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @ test
+     * @
+     * test
      */
     public function get_dashboardData_isLogin()
     {

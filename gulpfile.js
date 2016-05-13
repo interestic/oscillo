@@ -43,5 +43,8 @@ elixir(function (mix) {
     .scripts([
       'ng/components/home/homeDashboardController.js'
     ], 'public/js/home/dashboard.js')
+    .scripts([
+      'ng/components/settings/profileIndexController.js'
+    ], 'public/js/settings/profile.js')
     .phpUnit();
 });
