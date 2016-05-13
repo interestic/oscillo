@@ -19,6 +19,10 @@ class Page extends Model
 
     private $errors;
 
+    /**
+     * @param $data
+     * @return bool
+     */
     public function validate($data)
     {
         $v = Validator::make($data, $this->rules);
@@ -32,6 +36,9 @@ class Page extends Model
         return true;
     }
 
+    /**
+     * @return mixed
+     */
     public function errors()
     {
         return $this->errors;

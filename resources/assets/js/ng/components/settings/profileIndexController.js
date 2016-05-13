@@ -2,15 +2,16 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
   $scope.init = function (id, csrf) {
     $rootScope.user_id = id;
     $scope.csrf = csrf;
+    $scope.profile ={};
 
-    $scope.getProfile(id);
+    $scope.getProfile();
   };
 
 
-  $scope.getProfile = function (id) {
+  $scope.getProfile = function () {
 
     var parameter = {};
-    parameter.user_id = id;
+    parameter.user_id = $rootScope.user_id;
 
     var post_url = '/api/profile/get';
     $http({
@@ -18,14 +19,38 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
       url: post_url,
       params: parameter
     }).success(function (data, status, headers, config) {
-      $scope.name = data.name;
-      $scope.email = data.email;
-      $scope.url = data.url;
-      $scope.team = data.team;
-      $scope.location = data.location;
+      $scope.profile.name = data.name;
+      $scope.profile.email = data.email;
+      $scope.profile.url = data.url;
+      $scope.profile.team = data.team;
+      $scope.profile.location = data.location;
 
     }).error(function (data, status, headers, config) {
       //失敗
+
+    });
+  }
+
+  $scope.update_profile = function (){
+    var parameter = {};
+    parameter.profile = $scope.profile;
+    parameter.profile.id = $rootScope.user_id;
+
+    console.log(parameter);
+
+    var post_url = '/api/profile/update';
+    $http({
+      method: 'POST',
+      url: post_url,
+      params: parameter
+    }).success(function (data, status, headers, config) {
+
+      console.log(data);
+
+    }).error(function (data, status, headers, config) {
+      //失敗
+
+      console.log(data);
 
     });
   }
