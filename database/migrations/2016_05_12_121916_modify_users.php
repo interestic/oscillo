@@ -16,7 +16,9 @@ class ModifyUsers extends Migration
             $table->string('url')->after('email');
             $table->string('team')->after('url');
             $table->string('location')->after('team');
-            $table->unique(['name','email']);
+//            $table->unique(['name','email']);
+            $table->unique(['name']);
+            $table->unique(['email']);
         });
     }
 
@@ -29,6 +31,8 @@ class ModifyUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn(['url','team', 'location']);
+            $table->dropIndex('users_name_unique');
+            $table->dropIndex('users_email_unique');
         });
     }
 }
