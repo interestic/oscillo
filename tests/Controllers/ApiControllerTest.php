@@ -56,7 +56,7 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @test
+     * @ test
      *
      */
     public function post_latlon()
