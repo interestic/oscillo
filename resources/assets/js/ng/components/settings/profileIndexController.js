@@ -41,7 +41,10 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
 
   $scope.update_profile = function () {
     var parameter = {};
-    parameter.profile = $scope.profile;
+    parameter.profile = {};
+    parameter.profile.url = $scope.profile.url;
+    parameter.profile.team = $scope.profile.team;
+    parameter.profile.location = $scope.profile.location;
     parameter.profile.id = $rootScope.user_id;
 
     post_action(parameter);
