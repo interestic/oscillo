@@ -13,7 +13,7 @@ class OwmCityMaster extends Model
     {
         $lines = file(storage_path() . '/master/city.list.jp.json');
 
-// 配列をループしてHTMLをHTMLソースとして表示し、行番号もつけます。
+        // 配列をループしてHTMLをHTMLソースとして表示し、行番号もつけます。
         foreach ($lines as $line_num => $line) {
             $record = (array)json_decode($line);
             $coord = (array)$record['coord'];
