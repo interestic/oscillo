@@ -9,7 +9,7 @@ class OwmCityMaster extends Model
 {
     protected $table = 'owm_city_master';
 
-    public function data_master_import($locale)
+    public function data_master_import($locale='jp')
     {
         if ($locale == 'all') {
             $cily_json_file = file(storage_path() . '/master/city.list.json');
