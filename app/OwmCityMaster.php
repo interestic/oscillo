@@ -80,42 +80,42 @@ EOT;
 
         $dw = new DailyWeather();
 
-        $dw->name = isset($arr['name'])?$arr['name']:null;
+        $dw->name = isset($arr['name']) ? $arr['name'] : null;
 
-        $dw->coord_lon = $arr['coord']['lon'];
+        $dw->coord_lon = isset($arr['coord']['lon']) ? $arr['coord']['lon'] : null;
         //経度
-        $dw->coord_lat = $arr['coord']['lat'];
-        $dw->weather_id = $arr['weather']['id'];
+        $dw->coord_lat = isset($arr['coord']['lat']) ? $arr['coord']['lat'] : null;
+        $dw->weather_id = isset($arr['weather']['id']) ? $arr['weather']['id'] : null;
         //天気
-        $dw->weather_main = $arr['weather']['main'];
+        $dw->weather_main = isset($arr['weather']['main']) ? $arr['weather']['main'] : null;
         //説明
-        $dw->wether_description = $arr['weather']['description'];
+        $dw->wether_description = isset($arr['weather']['description']) ? $arr['weather']['description'] : null;
         //iconid
-        $dw->weather_icon_id = $arr['weather']['icon'];
+        $dw->weather_icon_id = isset($arr['weather']['icon']) ? $arr['weather']['icon'] : null;
         //base
-        $dw->base = isset($arr['base'])?$arr['base']:null;
+        $dw->base = isset($arr['base']) ? $arr['base'] : null;
         //現在の気温 main.temp
-        $dw->now_temp = $arr['main']['temp'];
+        $dw->now_temp = isset($arr['main']['temp']) ? $arr['main']['temp'] : null;
         //気圧 main.pressure
-        $dw->pressure = $arr['main']['pressure'];
+        $dw->pressure = isset($arr['main']['pressure']) ? $arr['main']['pressure'] : null;
         //湿度 main.humidity
-        $dw->humidity = $arr['main']['humidity'];
+        $dw->humidity = isset($arr['main']['humidity']) ? $arr['main']['humidity'] : null;
         //最低気温 main.min_temp
-        $dw->min_temp = $arr['main']['temp_min'];
+        $dw->min_temp = isset($arr['main']['temp_min']) ? $arr['main']['temp_min'] : null;
         //最高気温 main.max_temp
-        $dw->max_temp = $arr['main']['temp_max'];
+        $dw->max_temp = isset($arr['main']['temp_max']) ? $arr['main']['temp_max'] : null;
         //風速 wind.speed
-        $dw->wind_speed = $arr['wind']['speed'];
+        $dw->wind_speed = isset($arr['wind']['speed']) ? $arr['wind']['speed'] : null;
         //雲 clouds.all %
-        $dw->cloud = $arr['clouds']['all'];
+        $dw->cloud = isset($arr['clouds']['all']) ? $arr['clouds']['all'] : null;
         //計測日時 dt
-        $dw->datetime = $arr['dt'];
+        $dw->datetime = isset($arr['dt']) ? $arr['dt'] : null;
         //国 country
-        $dw->country = $arr['sys']['country'];
+        $dw->country = isset($arr['sys']['country']) ? $arr['sys']['country'] : null;
         //日の出
-        $dw->sunrise = $arr['sys']['sunrise'];
+        $dw->sunrise = isset($arr['sys']['sunrise']) ? $arr['sys']['sunrise'] : null;
         //日の入
-        $dw->sunset = $arr['sys']['sunset'];
+        $dw->sunset = isset($arr['sys']['sunset']) ? $arr['sys']['sunset'] : null;
 
         //Internal parameter
         $dw->sys_type = isset($arr['sys']['type']) ? $arr['sys']['type'] : '';

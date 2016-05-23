@@ -13,7 +13,7 @@ class DailyWeather extends Command
      * @var string
      */
     protected $signature = 'batch:owm
-                            {mode : import-city,maintenance-city}
+                            {mode : import-city, delete-city, weather-insert}
                             {locale=jp : jp | all}';
 
     /**
@@ -80,6 +80,7 @@ class DailyWeather extends Command
     public function getWeatherInsert()
     {
         $this->info('start:' . __FUNCTION__);
+        $start = microtime(true);
 
         $owm = new OwmCityMaster();
 
@@ -88,16 +89,16 @@ class DailyWeather extends Command
         foreach ($list as $item) {
             $result = $owm->getWeather($item->owm_id);
 
+            $time = microtime(true) - $start;
             if ($result) {
                 $id = $owm->insertCityWether($result);
-                $this->info($id . ' : success.');
+                $this->info($id . ' : success. ' . sprintf("%02d:%02d", $time / 60, $time % 60));
             } else {
-                $this->error($item->owm_id . ' : error.');
+                $this->error($item->owm_id . ' : error.' . sprintf("%02d:%02d", $time / 60, $time % 60));
             }
         }
 
         $owm->insertCityWether($list);
-
         $this->info(__FUNCTION__ . 'complete');
     }
 }
