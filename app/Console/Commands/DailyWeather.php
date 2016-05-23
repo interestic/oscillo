@@ -87,6 +87,11 @@ class DailyWeather extends Command
         $list = $owm->getCitylist();
 
         foreach ($list as $item) {
+
+            if(!isset($item->owm_id)){
+                continue;
+            }
+
             $result = $owm->getWeather($item->owm_id);
 
             $time = microtime(true) - $start;

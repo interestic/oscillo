@@ -56,7 +56,7 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @ test
+     * @test
      *
      */
     public function post_latlon()
@@ -64,19 +64,15 @@ class ApiControllerTest extends TestCase
         $parameter['latitude'] = '35.689499';
         $parameter['longitude'] = '139.691711';
 
-        $this->json('POST', '/api/latlon', $parameter)
-            ->seeJsonEquals([
-                [
+        $this->json('POST', '/api/owm/latlon', $parameter)
+            ->seeJsonContains([
                     "distance" => null,
                     "id" => 15,
                     "owm_country" => "JP",
                     "owm_id" => 1850144,
                     "owm_lat" => 35.689499,
-                    "owm_lon" => 139.691711,
-                    "owm_name" => "Tōkyō-to"
-                ]
-
-            ]);
+                    "owm_lon" => 139.691711
+                ]);
     }
 
     /**
