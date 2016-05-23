@@ -12,7 +12,7 @@ class CreateDailyWeather extends Migration
      */
     public function up()
     {
-        Schema::create('daily_weather', function (Blueprint $table) {
+        Schema::create('daily_weathers', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name');
             //緯度
@@ -75,6 +75,6 @@ class CreateDailyWeather extends Migration
      */
     public function down()
     {
-        Schema::drop('daily_weather');
+        Schema::drop('daily_weathers');
     }
 }
