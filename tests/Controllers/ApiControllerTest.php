@@ -22,7 +22,7 @@ class ApiControllerTest extends TestCase
         $this->be($user);
 
         $this->visit('http://127.0.0.1:9999/api/seed/home-by-id/1')->seeText('total');
-        $this->visit('http://127.0.0.1:9999/api/seed/home-by-id/1')->seeJsonContains(['prev_page_url'=>null]);
+        $this->visit('http://127.0.0.1:9999/api/seed/home-by-id/1')->seeJsonContains(['prev_page_url' => null]);
     }
 
     /**
@@ -34,8 +34,7 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @
-     * test
+     * @ test
      */
     public function get_dashboardData_isLogin()
     {
@@ -53,6 +52,35 @@ class ApiControllerTest extends TestCase
         $this->visit('http://127.0.0.1:9999/api/seed/dashboard-data/1')->seeText('sleep');
         $this->visit('http://127.0.0.1:9999/api/seed/dashboard-data/1')->seeText('squint');
         $this->visit('http://127.0.0.1:9999/api/seed/dashboard-data/1')->seeText('surprised');
+
+    }
+
+    /**
+     * @ test
+     *
+     */
+    public function post_latlon()
+    {
+        $parameter['latitude'] = '35.689499';
+        $parameter['longitude'] = '139.691711';
+
+        $this->json('POST', '/api/owm/latlon', $parameter)
+            ->seeJsonContains([
+                    "distance" => null,
+                    "id" => 15,
+                    "owm_country" => "JP",
+                    "owm_id" => 1850144,
+                    "owm_lat" => 35.689499,
+                    "owm_lon" => 139.691711
+                ]);
+    }
+
+    /**
+     * @test
+     */
+    public function get_listAndInsertCityWether(){
+
+        $result = $this->call('GET', '/api/list-and-insert-city-wether');
 
     }
 }

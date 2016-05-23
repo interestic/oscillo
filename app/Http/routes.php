@@ -41,5 +41,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('talent/create', 'TalentController@getCreate');
     Route::Controller('api/seed', 'Api\SeedController');
     Route::Controller('api/profile', 'Api\ProfileController');
+    Route::Controller('api/owm', 'Api\OWMController');
     Route::Controller('api','ApiController');
 });

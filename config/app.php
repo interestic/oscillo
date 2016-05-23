@@ -163,7 +163,8 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
-        Felixkiss\UniqueWithValidator\UniqueWithValidatorServiceProvider::class
+        Felixkiss\UniqueWithValidator\UniqueWithValidatorServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class
 
     ],
 
@@ -214,6 +215,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Twitter'   => Thujohn\Twitter\Facades\Twitter::class,
+        'Debugger' => Barryvdh\Debugbar\Facade::class
 
     ],
 
