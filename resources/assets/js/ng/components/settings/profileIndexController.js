@@ -1,6 +1,8 @@
 oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $http) {
+
   $scope.init = function (id, csrf) {
     $rootScope.user_id = id;
+    $scope.errors = {};
     $scope.csrf = csrf;
     $scope.profile = {};
     $scope.update_success = false;
@@ -65,7 +67,7 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
   }
 
   function post_action(parameter) {
-
+    $scope.errors = {};
     var post_url = '/api/profile/update';
     $http({
       method: 'POST',
@@ -76,9 +78,9 @@ oscilloApp.controller('profileIndexController', function ($scope, $rootScope, $h
       if (data == '1') {
         $scope.update_success = true;
       } else {
-
         $scope.update_error = true;
-        angular.element('.error_msg').apeend(data);
+
+        $scope.errors = data;
       }
 
     }).error(function (data, status, headers, config) {

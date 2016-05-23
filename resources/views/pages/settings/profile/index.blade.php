@@ -2,9 +2,7 @@
 
   <div class="alert callout" data-closable ng-show="update_error">
     <h5>Update fail!</h5>
-    <p class="error_msg">
-
-    </p>
+    <p class="error_msg" ng-repeat="(key,error) in errors"><%key%>:<%error[0]%></p>
     <button class="close-button" aria-label="Dismiss alert" type="button" ng-click="update_default()" data-close>
       <span aria-hidden="true">&times;</span>
     </button>
