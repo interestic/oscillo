@@ -18,6 +18,9 @@ before_script:
 - php artisan migrate
 - chmod -R 777 storage
 
+addons:
+    code_climate:
+        repo_token: a413b6a8438597fbf5bc7db30e4068be8e15a60b439117fd86284bb01905a107
 script:
 - phpunit
 
